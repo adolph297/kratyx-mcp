@@ -1,0 +1,43 @@
+{
+  "name": "Socket",
+  "slug": "socket",
+  "description": "Supply chain security and dependency analysis",
+  "category": "security",
+  "color": "#000000",
+  "website": "https://socket.dev",
+  "authType": "api_key",
+  "baseUrl": "https://api.socket.dev/v0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "report",
+      "displayName": "Check Package",
+      "description": "Scan package for security risks",
+      "method": "GET",
+      "endpoint": "/report/npm/{package}/{version}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "package": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "socket",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://socket.dev/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

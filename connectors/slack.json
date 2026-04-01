@@ -1,0 +1,57 @@
+{
+  "name": "Slack",
+  "slug": "slack",
+  "description": "Messaging platform for teams – send messages, manage channels, and automate workflows",
+  "category": "communication",
+  "icon": "slack",
+  "color": "#4A154B",
+  "website": "https://slack.com",
+  "authType": "oauth",
+  "baseUrl": "https://slack.com/api",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://slack.com/oauth/v2/authorize",
+    "tokenUrl": "https://slack.com/api/oauth.v2.access",
+    "scopes": ["chat:write", "channels:read", "users:read"],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "send_message",
+      "displayName": "Send Message",
+      "description": "Send a message to a Slack channel",
+      "method": "POST",
+      "endpoint": "/chat.postMessage",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "channel": { "type": "string", "required": true },
+          "text": { "type": "string", "required": true }
+        }
+      }
+    },
+    {
+      "name": "list_channels",
+      "displayName": "List Channels",
+      "description": "List all channels in the workspace",
+      "method": "GET",
+      "endpoint": "/conversations.list",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_users",
+      "displayName": "List Users",
+      "description": "List all users in the workspace",
+      "method": "GET",
+      "endpoint": "/users.list",
+      "inputSchema": {}
+    }
+  ],
+  "webhookSupport": true,
+  "rateLimits": { "requestsPerMinute": 60 },
+  "documentation": "https://api.slack.com/",
+  "version": "1.0.0",
+  "status": "active"
+}

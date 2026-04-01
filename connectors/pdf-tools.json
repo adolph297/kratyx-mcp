@@ -1,0 +1,35 @@
+{
+  "name": "PDF Tools",
+  "slug": "pdf-tools",
+  "description": "Fill, Analyze, Extract, and View PDF documents",
+  "category": "productivity",
+  "color": "#DC2626",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "fill_form",
+      "displayName": "Fill Form",
+      "description": "Fill PDF form fields",
+      "method": "POST",
+      "endpoint": "/fill",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "pdf-tools",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

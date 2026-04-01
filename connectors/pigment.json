@@ -1,0 +1,33 @@
+{
+  "name": "Pigment",
+  "slug": "pigment",
+  "description": "Business planning and financial modeling platform",
+  "category": "finance",
+  "color": "#6C5CE7",
+  "website": "https://pigment.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.pigment.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_models",
+      "displayName": "List Models",
+      "description": "List financial models",
+      "method": "GET",
+      "endpoint": "/models",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "pigment",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://pigment.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

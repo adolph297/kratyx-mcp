@@ -1,0 +1,28 @@
+{
+  "name": "Docling MCP",
+  "slug": "docling",
+  "description": "PDF and document processing MCP server",
+  "category": "productivity",
+  "color": "#EC4899",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "process",
+      "displayName": "Process Document",
+      "description": "Extract structured data",
+      "method": "POST",
+      "endpoint": "/process",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "docling",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

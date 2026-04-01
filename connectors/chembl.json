@@ -1,0 +1,35 @@
+{
+  "name": "ChEMBL",
+  "slug": "chembl",
+  "description": "Open database of bioactive drug-like molecules",
+  "category": "knowledge",
+  "color": "#00897B",
+  "website": "https://www.ebi.ac.uk/chembl",
+  "authType": "none",
+  "baseUrl": "https://www.ebi.ac.uk/chembl/api/data",
+  "actions": [
+    {
+      "name": "search_molecules",
+      "displayName": "Search Molecules",
+      "description": "Search molecules database",
+      "method": "GET",
+      "endpoint": "/molecule/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "chembl",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://www.ebi.ac.uk/chembl/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

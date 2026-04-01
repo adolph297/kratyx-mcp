@@ -1,0 +1,40 @@
+{
+  "name": "Vendr",
+  "slug": "vendr",
+  "description": "Software pricing analysis and procurement tools",
+  "category": "finance",
+  "color": "#F43F5E",
+  "website": "https://vendr.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.vendr.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_pricing",
+      "displayName": "Get Pricing",
+      "description": "Get benchmark pricing",
+      "method": "GET",
+      "endpoint": "/pricing/{slug}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "vendr",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://vendr.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

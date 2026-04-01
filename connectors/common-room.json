@@ -1,0 +1,33 @@
+{
+  "name": "Common Room",
+  "slug": "common-room",
+  "description": "Community intelligence platform for customer engagement",
+  "category": "crm",
+  "color": "#5046E5",
+  "website": "https://commonroom.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.commonroom.io/community/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_members",
+      "displayName": "List Members",
+      "description": "List community members",
+      "method": "GET",
+      "endpoint": "/members",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "common-room",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://commonroom.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

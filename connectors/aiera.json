@@ -1,0 +1,33 @@
+{
+  "name": "Aiera",
+  "slug": "aiera",
+  "description": "AI-powered financial research and earnings intelligence",
+  "category": "finance",
+  "color": "#2563EB",
+  "website": "https://aiera.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.aiera.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_events",
+      "displayName": "Get Events",
+      "description": "Get financial events",
+      "method": "GET",
+      "endpoint": "/events",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "aiera",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://aiera.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

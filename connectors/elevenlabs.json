@@ -1,0 +1,50 @@
+{
+  "name": "ElevenLabs",
+  "slug": "elevenlabs",
+  "description": "AI voice generation and text-to-speech platform",
+  "category": "ai",
+  "color": "#000000",
+  "website": "https://elevenlabs.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.elevenlabs.io/v1",
+  "apiKeyConfig": {
+    "headerName": "xi-api-key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "text_to_speech",
+      "displayName": "Text to Speech",
+      "description": "Convert text to speech",
+      "method": "POST",
+      "endpoint": "/text-to-speech/{voiceId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "voiceId": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_voices",
+      "displayName": "List Voices",
+      "description": "List available voices",
+      "method": "GET",
+      "endpoint": "/voices",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "elevenlabs",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://elevenlabs.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

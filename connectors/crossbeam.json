@@ -1,0 +1,33 @@
+{
+  "name": "Crossbeam",
+  "slug": "crossbeam",
+  "description": "Partner ecosystem platform for account mapping and co-selling",
+  "category": "crm",
+  "color": "#4338CA",
+  "website": "https://crossbeam.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.crossbeam.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_overlaps",
+      "displayName": "List Overlaps",
+      "description": "List partner overlaps",
+      "method": "GET",
+      "endpoint": "/overlaps",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "crossbeam",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://crossbeam.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

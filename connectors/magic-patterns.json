@@ -1,0 +1,40 @@
+{
+  "name": "Magic Patterns",
+  "slug": "magic-patterns",
+  "description": "AI-powered UI design pattern generation and prototyping",
+  "category": "ai",
+  "color": "#8B5CF6",
+  "website": "https://magicpatterns.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.magicpatterns.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "generate_ui",
+      "displayName": "Generate UI",
+      "description": "Generate UI patterns with AI",
+      "method": "POST",
+      "endpoint": "/generate",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "magic-patterns",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://magicpatterns.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Harmonic",
+  "slug": "harmonic",
+  "description": "Company intelligence and startup discovery platform",
+  "category": "data",
+  "color": "#0B1437",
+  "website": "https://harmonic.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.harmonic.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "apikey",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_companies",
+      "displayName": "Search Companies",
+      "description": "Search for companies",
+      "method": "POST",
+      "endpoint": "/companies/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "harmonic",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://harmonic.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

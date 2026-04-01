@@ -1,0 +1,61 @@
+{
+  "name": "Zoom",
+  "slug": "zoom",
+  "description": "Video conferencing and online meeting platform",
+  "category": "communication",
+  "color": "#2D8CFF",
+  "website": "https://zoom.us",
+  "authType": "oauth",
+  "baseUrl": "https://api.zoom.us/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://zoom.us/oauth/authorize",
+    "tokenUrl": "https://zoom.us/oauth/token",
+    "scopes": [
+      "meeting:read",
+      "meeting:write"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_meetings",
+      "displayName": "List Meetings",
+      "description": "List user meetings",
+      "method": "GET",
+      "endpoint": "/users/me/meetings",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_meeting",
+      "displayName": "Create Meeting",
+      "description": "Create a meeting",
+      "method": "POST",
+      "endpoint": "/users/me/meetings",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "type": {
+            "type": "number"
+          },
+          "duration": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "zoom",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zoom.us/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "SAP CAP",
+  "slug": "sap-cap",
+  "description": "Cloud Application Programming Model for SAP",
+  "category": "devtools",
+  "color": "#008FD3",
+  "website": "https://sap.com",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "get_schema",
+      "displayName": "Get Schema",
+      "description": "Download CDS schema",
+      "method": "GET",
+      "endpoint": "/schema",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "sap-cap",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sap.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Pylon",
+  "slug": "pylon",
+  "description": "B2B support platform for managing customer conversations",
+  "category": "crm",
+  "color": "#3B82F6",
+  "website": "https://usepylon.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.usepylon.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_conversations",
+      "displayName": "List Conversations",
+      "description": "List support conversations",
+      "method": "GET",
+      "endpoint": "/conversations",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "pylon",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://usepylon.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

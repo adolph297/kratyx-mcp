@@ -1,0 +1,40 @@
+{
+  "name": "CB Insights",
+  "slug": "cb-insights",
+  "description": "Market intelligence platform for venture capital and startups",
+  "category": "finance",
+  "color": "#003399",
+  "website": "https://cbinsights.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.cbinsights.com/v3",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_companies",
+      "displayName": "Search Companies",
+      "description": "Search for companies",
+      "method": "GET",
+      "endpoint": "/companies/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "cb-insights",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://cbinsights.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

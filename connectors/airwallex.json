@@ -1,0 +1,33 @@
+{
+  "name": "Airwallex",
+  "slug": "airwallex",
+  "description": "Global payments and financial infrastructure platform",
+  "category": "finance",
+  "color": "#FF5A1F",
+  "website": "https://airwallex.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.airwallex.com/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_accounts",
+      "displayName": "List Accounts",
+      "description": "List payment accounts",
+      "method": "GET",
+      "endpoint": "/accounts",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "airwallex",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://airwallex.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

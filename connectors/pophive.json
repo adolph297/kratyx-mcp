@@ -1,0 +1,28 @@
+{
+  "name": "PopHIVE",
+  "slug": "pophive",
+  "description": "Public health data and analytics repository",
+  "category": "data",
+  "color": "#EF4444",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "get_data",
+      "displayName": "Get Health Data",
+      "description": "Search public health metrics",
+      "method": "GET",
+      "endpoint": "/metrics",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "pophive",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

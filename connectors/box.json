@@ -1,0 +1,52 @@
+{
+  "name": "Box",
+  "slug": "box",
+  "description": "Cloud content management and file sharing platform for enterprises",
+  "category": "storage",
+  "color": "#0061D5",
+  "website": "https://box.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.box.com/2.0",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://account.box.com/api/oauth2/authorize",
+    "tokenUrl": "https://api.box.com/oauth2/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_files",
+      "displayName": "List Files",
+      "description": "List files in a folder",
+      "method": "GET",
+      "endpoint": "/folders/{folderId}/items",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "folderId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "upload_file",
+      "displayName": "Upload File",
+      "description": "Upload a file",
+      "method": "POST",
+      "endpoint": "/files/content",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "box",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://box.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

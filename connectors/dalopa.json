@@ -1,0 +1,33 @@
+{
+  "name": "Dalopa",
+  "slug": "dalopa",
+  "description": "Data operations and pipeline management platform",
+  "category": "data",
+  "color": "#2563EB",
+  "website": "https://dalopa.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.dalopa.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_pipelines",
+      "displayName": "List Pipelines",
+      "description": "List data pipelines",
+      "method": "GET",
+      "endpoint": "/pipelines",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "dalopa",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://dalopa.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

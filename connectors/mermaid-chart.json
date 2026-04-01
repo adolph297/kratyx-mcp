@@ -1,0 +1,43 @@
+{
+  "name": "Mermaid Chart",
+  "slug": "mermaid-chart",
+  "description": "Collaborative diagram and chart creation using Mermaid syntax",
+  "category": "productivity",
+  "color": "#FF3670",
+  "website": "https://mermaid.live",
+  "authType": "api_key",
+  "baseUrl": "https://mermaid.ink/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "render_chart",
+      "displayName": "Render Chart",
+      "description": "Render a Mermaid diagram",
+      "method": "POST",
+      "endpoint": "/render",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "mermaid-chart",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mermaid.live/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

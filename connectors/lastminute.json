@@ -1,0 +1,33 @@
+{
+  "name": "lastminute.com",
+  "slug": "lastminute",
+  "description": "Travel booking platform for flights, hotels, and holidays",
+  "category": "ecommerce",
+  "color": "#E31C5F",
+  "website": "https://lastminute.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.lastminute.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_deals",
+      "displayName": "Search Deals",
+      "description": "Search travel deals",
+      "method": "GET",
+      "endpoint": "/deals",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "lastminute",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://lastminute.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

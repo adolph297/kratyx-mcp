@@ -1,0 +1,33 @@
+{
+  "name": "Klaviyo",
+  "slug": "klaviyo",
+  "description": "Email and SMS marketing automation platform for e-commerce",
+  "category": "marketing",
+  "color": "#000000",
+  "website": "https://klaviyo.com",
+  "authType": "api_key",
+  "baseUrl": "https://a.klaviyo.com/api",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Klaviyo-API-Key ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_profiles",
+      "displayName": "List Profiles",
+      "description": "List customer profiles",
+      "method": "GET",
+      "endpoint": "/profiles",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "klaviyo",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://klaviyo.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

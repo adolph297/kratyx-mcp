@@ -1,0 +1,40 @@
+{
+  "name": "Clarity AI",
+  "slug": "clarity-ai",
+  "description": "Sustainability and ESG analytics AI platform",
+  "category": "ai",
+  "color": "#00C853",
+  "website": "https://clarity.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.clarity.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_scores",
+      "displayName": "Get ESG Scores",
+      "description": "Get ESG sustainability scores",
+      "method": "GET",
+      "endpoint": "/scores",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "entity": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "clarity-ai",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clarity.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

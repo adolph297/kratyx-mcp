@@ -1,0 +1,40 @@
+{
+  "name": "Consensus",
+  "slug": "consensus",
+  "description": "AI-powered academic search engine for research papers",
+  "category": "knowledge",
+  "color": "#2E7D32",
+  "website": "https://consensus.app",
+  "authType": "api_key",
+  "baseUrl": "https://api.consensus.app/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Research",
+      "description": "Search research papers with AI",
+      "method": "GET",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "consensus",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://consensus.app/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Stytch",
+  "slug": "stytch",
+  "description": "Authentication infrastructure for passwordless and MFA",
+  "category": "security",
+  "color": "#19303D",
+  "website": "https://stytch.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.stytch.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_users",
+      "displayName": "Search Users",
+      "description": "Search authenticated users",
+      "method": "POST",
+      "endpoint": "/users/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "stytch",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://stytch.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

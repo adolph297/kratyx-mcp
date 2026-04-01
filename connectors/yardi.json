@@ -1,0 +1,33 @@
+{
+  "name": "Yardi Virtuoso",
+  "slug": "yardi",
+  "description": "Real estate investment and asset management",
+  "category": "finance",
+  "color": "#3B82F6",
+  "website": "https://yardi.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.yardi.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_properties",
+      "displayName": "List Properties",
+      "description": "List real estate portfolio",
+      "method": "GET",
+      "endpoint": "/properties",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "yardi",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://yardi.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

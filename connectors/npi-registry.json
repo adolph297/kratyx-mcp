@@ -1,0 +1,41 @@
+{
+  "name": "NPI Registry",
+  "slug": "npi-registry",
+  "description": "National Provider Identifier registry for healthcare providers",
+  "category": "knowledge",
+  "color": "#003B71",
+  "website": "https://npiregistry.cms.hhs.gov",
+  "authType": "none",
+  "baseUrl": "https://npiregistry.cms.hhs.gov/api",
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Providers",
+      "description": "Search healthcare providers",
+      "method": "GET",
+      "endpoint": "/",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "number": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "npi-registry",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://npiregistry.cms.hhs.gov/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

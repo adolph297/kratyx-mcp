@@ -1,0 +1,41 @@
+{
+  "name": "Webhooks",
+  "slug": "webhooks",
+  "description": "Universal webhook sender for custom integrations",
+  "category": "devtools",
+  "color": "#6B7280",
+  "website": "",
+  "authType": "none",
+  "baseUrl": "",
+  "actions": [
+    {
+      "name": "send_webhook",
+      "displayName": "Send Webhook",
+      "description": "Send a POST request to any URL",
+      "method": "POST",
+      "endpoint": "/{url}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "body": {
+            "type": "object"
+          },
+          "headers": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "webhooks",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://webhooks.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

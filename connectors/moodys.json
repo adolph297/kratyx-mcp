@@ -1,0 +1,40 @@
+{
+  "name": "Moody's",
+  "slug": "moodys",
+  "description": "Financial intelligence and credit risk analysis provider",
+  "category": "finance",
+  "color": "#002B49",
+  "website": "https://moodys.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.moodys.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_ratings",
+      "displayName": "Get Ratings",
+      "description": "Get credit ratings",
+      "method": "GET",
+      "endpoint": "/ratings",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "entity": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "moodys",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://moodys.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

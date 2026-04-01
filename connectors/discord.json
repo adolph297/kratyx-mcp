@@ -1,0 +1,22 @@
+{
+  "name": "Discord",
+  "slug": "discord",
+  "description": "Voice, video, and text communication platform for communities",
+  "category": "communication",
+  "icon": "discord",
+  "color": "#5865F2",
+  "website": "https://discord.com",
+  "authType": "oauth",
+  "baseUrl": "https://discord.com/api/v10",
+  "authConfig": { "clientId": "", "clientSecret": "", "authUrl": "https://discord.com/api/oauth2/authorize", "tokenUrl": "https://discord.com/api/oauth2/token", "scopes": ["identify", "guilds", "messages.read"], "responseType": "code", "grantType": "authorization_code" },
+  "actions": [
+    { "name": "get_user", "displayName": "Get Current User", "description": "Get the current user", "method": "GET", "endpoint": "/users/@me", "inputSchema": {} },
+    { "name": "list_guilds", "displayName": "List Guilds", "description": "List user's guilds", "method": "GET", "endpoint": "/users/@me/guilds", "inputSchema": {} },
+    { "name": "send_message", "displayName": "Send Message", "description": "Send a message to a channel", "method": "POST", "endpoint": "/channels/{channelId}/messages", "inputSchema": { "type": "object", "properties": { "channelId": { "type": "string" }, "content": { "type": "string" } } } }
+  ],
+  "webhookSupport": true,
+  "rateLimits": { "requestsPerMinute": 50 },
+  "documentation": "https://discord.com/developers/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Zapier",
+  "slug": "zapier",
+  "description": "No-code workflow automation platform connecting 5000+ apps",
+  "category": "automation",
+  "color": "#FF4A00",
+  "website": "https://zapier.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.zapier.com/v1",
+  "apiKeyConfig": {
+    "headerName": "X-API-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_zaps",
+      "displayName": "List Zaps",
+      "description": "List automation workflows",
+      "method": "GET",
+      "endpoint": "/zaps",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "zapier",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zapier.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

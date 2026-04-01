@@ -1,0 +1,58 @@
+{
+  "name": "Trello",
+  "slug": "trello",
+  "description": "Visual project management with boards, lists, and cards",
+  "category": "productivity",
+  "color": "#0052CC",
+  "website": "https://trello.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.trello.com/1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://trello.com/1/authorize",
+    "tokenUrl": "https://trello.com/1/OAuthGetAccessToken",
+    "scopes": [
+      "read",
+      "write"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_boards",
+      "displayName": "List Boards",
+      "description": "List all boards",
+      "method": "GET",
+      "endpoint": "/members/me/boards",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_card",
+      "displayName": "Create Card",
+      "description": "Create a card",
+      "method": "POST",
+      "endpoint": "/cards",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "idList": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "trello",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://trello.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

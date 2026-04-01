@@ -1,0 +1,33 @@
+{
+  "name": "Ramp",
+  "slug": "ramp",
+  "description": "Corporate card and spend management platform",
+  "category": "finance",
+  "color": "#1C1C1C",
+  "website": "https://ramp.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.ramp.com/developer/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_transactions",
+      "displayName": "List Transactions",
+      "description": "List card transactions",
+      "method": "GET",
+      "endpoint": "/transactions",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "ramp",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://ramp.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

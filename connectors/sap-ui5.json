@@ -1,0 +1,28 @@
+{
+  "name": "SAPUI5",
+  "slug": "sap-ui5",
+  "description": "Development toolkit for HTML5 applications",
+  "category": "devtools",
+  "color": "#008FD3",
+  "website": "https://sap.com",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "get_lib",
+      "displayName": "Get Library",
+      "description": "Download ui5 framework",
+      "method": "GET",
+      "endpoint": "/library",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "sap-ui5",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sap.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

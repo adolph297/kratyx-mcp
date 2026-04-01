@@ -1,0 +1,46 @@
+{
+  "name": "Twilio",
+  "slug": "twilio",
+  "description": "Cloud communications platform for SMS, voice, and messaging",
+  "category": "communication",
+  "color": "#F22F46",
+  "website": "https://twilio.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.twilio.com/2010-04-01",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "send_sms",
+      "displayName": "Send SMS",
+      "description": "Send an SMS message",
+      "method": "POST",
+      "endpoint": "/Accounts/{accountSid}/Messages.json",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "To": {
+            "type": "string"
+          },
+          "From": {
+            "type": "string"
+          },
+          "Body": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "twilio",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://twilio.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

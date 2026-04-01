@@ -1,0 +1,32 @@
+{
+  "name": "Process Street",
+  "slug": "process-street",
+  "description": "Workflow and checklist management platform",
+  "category": "automation",
+  "color": "#00C48C",
+  "website": "https://process.st",
+  "authType": "api_key",
+  "baseUrl": "https://api.process.st/api/1",
+  "apiKeyConfig": {
+    "headerName": "X-API-KEY",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_workflows",
+      "displayName": "List Workflows",
+      "description": "List workflows",
+      "method": "GET",
+      "endpoint": "/workflows",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "process-street",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://process.st/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

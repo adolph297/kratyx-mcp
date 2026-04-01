@@ -1,0 +1,28 @@
+{
+  "name": "SAP MDK",
+  "slug": "sap-mdk",
+  "description": "Mobile Development Kit for enterprise apps",
+  "category": "devtools",
+  "color": "#008FD3",
+  "website": "https://sap.com",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "get_metadata",
+      "displayName": "Get Metadata",
+      "description": "Download mobile metadata",
+      "method": "GET",
+      "endpoint": "/metadata",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "sap-mdk",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sap.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

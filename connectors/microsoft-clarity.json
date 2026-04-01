@@ -1,0 +1,40 @@
+{
+  "name": "Microsoft Clarity",
+  "slug": "microsoft-clarity",
+  "description": "Free website analytics and session recording tool",
+  "category": "analytics",
+  "color": "#0078D4",
+  "website": "https://clarity.microsoft.com",
+  "authType": "api_key",
+  "baseUrl": "https://www.clarity.ms/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_dashboard",
+      "displayName": "Get Dashboard",
+      "description": "Get dashboard data",
+      "method": "GET",
+      "endpoint": "/projects/{projectId}/dashboard",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "microsoft-clarity",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clarity.microsoft.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

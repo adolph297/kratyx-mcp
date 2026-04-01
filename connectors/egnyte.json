@@ -1,0 +1,44 @@
+{
+  "name": "Egnyte",
+  "slug": "egnyte",
+  "description": "Enterprise content collaboration and governance platform",
+  "category": "storage",
+  "color": "#00A651",
+  "website": "https://egnyte.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.egnyte.com/pubapi/v1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://your-domain.egnyte.com/puboauth/token",
+    "tokenUrl": "https://your-domain.egnyte.com/puboauth/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_files",
+      "displayName": "List Files",
+      "description": "List files in folder",
+      "method": "GET",
+      "endpoint": "/fs/{path}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "egnyte",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://egnyte.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

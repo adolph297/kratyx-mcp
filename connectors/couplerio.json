@@ -1,0 +1,33 @@
+{
+  "name": "Coupler.io",
+  "slug": "couplerio",
+  "description": "Data integration platform for automating data imports",
+  "category": "data",
+  "color": "#4F46E5",
+  "website": "https://coupler.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.coupler.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_importers",
+      "displayName": "List Importers",
+      "description": "List data importers",
+      "method": "GET",
+      "endpoint": "/importers",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "couplerio",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://coupler.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Jotform",
+  "slug": "jotform",
+  "description": "Online form builder and data collection platform",
+  "category": "productivity",
+  "color": "#FF6100",
+  "website": "https://jotform.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.jotform.com",
+  "apiKeyConfig": {
+    "headerName": "APIKEY",
+    "location": "query"
+  },
+  "actions": [
+    {
+      "name": "list_forms",
+      "displayName": "List Forms",
+      "description": "List all forms",
+      "method": "GET",
+      "endpoint": "/user/forms",
+      "inputSchema": {}
+    },
+    {
+      "name": "get_submissions",
+      "displayName": "Get Submissions",
+      "description": "Get form submissions",
+      "method": "GET",
+      "endpoint": "/form/{formId}/submissions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "formId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "jotform",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://jotform.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

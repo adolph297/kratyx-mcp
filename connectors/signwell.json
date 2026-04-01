@@ -1,0 +1,47 @@
+{
+  "name": "SignWell",
+  "slug": "signwell",
+  "description": "Electronic signature platform for document signing",
+  "category": "productivity",
+  "color": "#3B82F6",
+  "website": "https://signwell.com",
+  "authType": "api_key",
+  "baseUrl": "https://www.signwell.com/api/v1",
+  "apiKeyConfig": {
+    "headerName": "X-Api-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_documents",
+      "displayName": "List Documents",
+      "description": "List documents",
+      "method": "GET",
+      "endpoint": "/documents",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_document",
+      "displayName": "Create Document",
+      "description": "Create a new document",
+      "method": "POST",
+      "endpoint": "/documents",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "signwell",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://signwell.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

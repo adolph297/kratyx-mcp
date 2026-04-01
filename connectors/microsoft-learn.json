@@ -1,0 +1,38 @@
+{
+  "name": "Microsoft Learn",
+  "slug": "microsoft-learn",
+  "description": "Microsoft's learning platform for technical documentation and training",
+  "category": "knowledge",
+  "color": "#0078D4",
+  "website": "https://learn.microsoft.com",
+  "authType": "none",
+  "baseUrl": "https://learn.microsoft.com/api",
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Docs",
+      "description": "Search Microsoft documentation",
+      "method": "GET",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "search": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "microsoft-learn",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://learn.microsoft.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Tavily",
+  "slug": "tavily",
+  "description": "AI-optimized search API for LLM applications",
+  "category": "ai",
+  "color": "#000000",
+  "website": "https://tavily.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.tavily.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search",
+      "description": "AI-powered web search",
+      "method": "POST",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "search_depth": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "tavily",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://tavily.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

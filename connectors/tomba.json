@@ -1,0 +1,39 @@
+{
+  "name": "Tomba",
+  "slug": "tomba",
+  "description": "Email finder and verification platform",
+  "category": "marketing",
+  "color": "#EAB308",
+  "website": "https://tomba.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.tomba.io/v1",
+  "apiKeyConfig": {
+    "headerName": "X-Tomba-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_emails",
+      "displayName": "Search Emails",
+      "description": "Find email addresses for a domain",
+      "method": "GET",
+      "endpoint": "/domain-search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "tomba",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://tomba.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

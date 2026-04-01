@@ -1,0 +1,55 @@
+{
+  "name": "Bitly",
+  "slug": "bitly",
+  "description": "URL shortening and link management platform",
+  "category": "marketing",
+  "color": "#EE6123",
+  "website": "https://bitly.com",
+  "authType": "api_key",
+  "baseUrl": "https://api-ssl.bitly.com/v4",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "shorten",
+      "displayName": "Shorten URL",
+      "description": "Create a short link",
+      "method": "POST",
+      "endpoint": "/shorten",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "long_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_bitlinks",
+      "displayName": "List Bitlinks",
+      "description": "List shortened links",
+      "method": "GET",
+      "endpoint": "/groups/{groupGuid}/bitlinks",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "groupGuid": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "bitly",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://bitly.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

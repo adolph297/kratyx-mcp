@@ -1,0 +1,33 @@
+{
+  "name": "Cloudflare",
+  "slug": "cloudflare",
+  "description": "Web performance and security platform",
+  "category": "cloud",
+  "color": "#F48120",
+  "website": "https://cloudflare.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.cloudflare.com/client/v4",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_zones",
+      "displayName": "List Zones",
+      "description": "List DNS zones",
+      "method": "GET",
+      "endpoint": "/zones",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "cloudflare",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://cloudflare.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

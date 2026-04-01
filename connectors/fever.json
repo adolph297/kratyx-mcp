@@ -1,0 +1,40 @@
+{
+  "name": "Fever Event Discovery",
+  "slug": "fever",
+  "description": "Event discovery and booking platform",
+  "category": "ecommerce",
+  "color": "#FF2D55",
+  "website": "https://feverup.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.feverup.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_events",
+      "displayName": "List Events",
+      "description": "List local events",
+      "method": "GET",
+      "endpoint": "/events",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "fever",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://feverup.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

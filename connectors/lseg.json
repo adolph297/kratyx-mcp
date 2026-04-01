@@ -1,0 +1,40 @@
+{
+  "name": "LSEG",
+  "slug": "lseg",
+  "description": "London Stock Exchange Group financial data and infrastructure",
+  "category": "finance",
+  "color": "#00315E",
+  "website": "https://lseg.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.refinitiv.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_quote",
+      "displayName": "Get Quote",
+      "description": "Get a market quote",
+      "method": "GET",
+      "endpoint": "/data/pricing/snapshots/v1",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "universe": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "lseg",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://lseg.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

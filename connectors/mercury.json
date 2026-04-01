@@ -1,0 +1,48 @@
+{
+  "name": "Mercury",
+  "slug": "mercury",
+  "description": "Business banking platform for startups and growing companies",
+  "category": "finance",
+  "color": "#6366F1",
+  "website": "https://mercury.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.mercury.com/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_accounts",
+      "displayName": "List Accounts",
+      "description": "List bank accounts",
+      "method": "GET",
+      "endpoint": "/accounts",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_transactions",
+      "displayName": "List Transactions",
+      "description": "List transactions",
+      "method": "GET",
+      "endpoint": "/accounts/{accountId}/transactions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "mercury",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mercury.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Figma",
+  "slug": "figma",
+  "description": "Collaborative interface design and prototyping tool",
+  "category": "productivity",
+  "color": "#F24E1E",
+  "website": "https://figma.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.figma.com/v1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://www.figma.com/oauth",
+    "tokenUrl": "https://www.figma.com/api/oauth/token",
+    "scopes": [
+      "file_read"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "get_file",
+      "displayName": "Get File",
+      "description": "Get a Figma file",
+      "method": "GET",
+      "endpoint": "/files/{fileKey}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fileKey": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "figma",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://figma.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

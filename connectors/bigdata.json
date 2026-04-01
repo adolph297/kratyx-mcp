@@ -1,0 +1,40 @@
+{
+  "name": "Bigdata.com",
+  "slug": "bigdata",
+  "description": "Alternative data analytics for financial markets",
+  "category": "data",
+  "color": "#00BCD4",
+  "website": "https://bigdata.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.bigdata.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Data",
+      "description": "Search alternative data",
+      "method": "GET",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "bigdata",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://bigdata.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

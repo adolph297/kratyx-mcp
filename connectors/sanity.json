@@ -1,0 +1,43 @@
+{
+  "name": "Sanity",
+  "slug": "sanity",
+  "description": "Headless CMS platform for structured content management",
+  "category": "devtools",
+  "color": "#F03E2F",
+  "website": "https://sanity.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.sanity.io/v2021-06-07",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "GROQ Query",
+      "description": "Execute a GROQ query",
+      "method": "GET",
+      "endpoint": "/data/query/{dataset}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "sanity",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sanity.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

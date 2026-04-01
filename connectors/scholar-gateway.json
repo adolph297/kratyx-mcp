@@ -1,0 +1,38 @@
+{
+  "name": "Scholar Gateway",
+  "slug": "scholar-gateway",
+  "description": "Academic research paper search and discovery platform",
+  "category": "knowledge",
+  "color": "#4285F4",
+  "website": "https://scholar.google.com",
+  "authType": "none",
+  "baseUrl": "https://serpapi.com",
+  "actions": [
+    {
+      "name": "search_papers",
+      "displayName": "Search Papers",
+      "description": "Search academic papers",
+      "method": "GET",
+      "endpoint": "/search.json",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          },
+          "engine": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "scholar-gateway",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://scholar.google.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

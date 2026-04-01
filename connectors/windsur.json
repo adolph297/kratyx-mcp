@@ -1,0 +1,43 @@
+{
+  "name": "Windsur.ai",
+  "slug": "windsur",
+  "description": "AI-powered development and code assistance platform",
+  "category": "ai",
+  "color": "#0EA5E9",
+  "website": "https://windsur.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.windsur.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "generate_code",
+      "displayName": "Generate Code",
+      "description": "Generate code with AI",
+      "method": "POST",
+      "endpoint": "/generate",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "windsur",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://windsur.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

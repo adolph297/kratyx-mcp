@@ -1,0 +1,33 @@
+{
+  "name": "BioRender",
+  "slug": "biorender",
+  "description": "Scientific illustration and figure creation platform",
+  "category": "productivity",
+  "color": "#2F6DB5",
+  "website": "https://biorender.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.biorender.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_illustrations",
+      "displayName": "List Illustrations",
+      "description": "List saved illustrations",
+      "method": "GET",
+      "endpoint": "/illustrations",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "biorender",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://biorender.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

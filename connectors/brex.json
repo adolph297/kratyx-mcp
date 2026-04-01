@@ -1,0 +1,41 @@
+{
+  "name": "Brex",
+  "slug": "brex",
+  "description": "Corporate card and spend management for growing businesses",
+  "category": "finance",
+  "color": "#F26522",
+  "website": "https://brex.com",
+  "authType": "api_key",
+  "baseUrl": "https://platform.brexapis.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_transactions",
+      "displayName": "List Transactions",
+      "description": "List card transactions",
+      "method": "GET",
+      "endpoint": "/transactions/card/primary",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_accounts",
+      "displayName": "List Accounts",
+      "description": "List accounts",
+      "method": "GET",
+      "endpoint": "/accounts",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "brex",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://brex.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

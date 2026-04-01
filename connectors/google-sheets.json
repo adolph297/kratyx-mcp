@@ -1,0 +1,49 @@
+{
+  "name": "Google Sheets",
+  "slug": "google-sheets",
+  "description": "Cloud-based spreadsheet for data analysis and collaboration",
+  "category": "productivity",
+  "color": "#0F9D58",
+  "website": "https://sheets.google.com",
+  "authType": "oauth",
+  "baseUrl": "https://sheets.googleapis.com/v4",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+    "tokenUrl": "https://oauth2.googleapis.com/token",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets.readonly"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "get_values",
+      "displayName": "Get Values",
+      "description": "Read values from a range",
+      "method": "GET",
+      "endpoint": "/spreadsheets/{spreadsheetId}/values/{range}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "spreadsheetId": {
+            "type": "string"
+          },
+          "range": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "google-sheets",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sheets.google.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

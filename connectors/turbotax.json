@@ -1,0 +1,37 @@
+{
+  "name": "Intuit TurboTax",
+  "slug": "turbotax",
+  "description": "Tax preparation and filing software",
+  "category": "finance",
+  "color": "#D52B1E",
+  "website": "https://turbotax.intuit.com",
+  "authType": "oauth",
+  "baseUrl": "https://tax.api.intuit.com/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://appcenter.intuit.com/connect/oauth2",
+    "tokenUrl": "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "get_returns",
+      "displayName": "Get Tax Returns",
+      "description": "Get tax return data",
+      "method": "GET",
+      "endpoint": "/tax-filings",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "turbotax",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://turbotax.intuit.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

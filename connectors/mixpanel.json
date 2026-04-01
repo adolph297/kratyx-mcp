@@ -1,0 +1,33 @@
+{
+  "name": "Mixpanel",
+  "slug": "mixpanel",
+  "description": "Product analytics platform for user behavior tracking",
+  "category": "analytics",
+  "color": "#7856FF",
+  "website": "https://mixpanel.com",
+  "authType": "api_key",
+  "baseUrl": "https://mixpanel.com/api/2.0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "query_events",
+      "displayName": "Query Events",
+      "description": "Query event data",
+      "method": "GET",
+      "endpoint": "/events",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "mixpanel",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mixpanel.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

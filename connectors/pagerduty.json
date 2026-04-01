@@ -1,0 +1,33 @@
+{
+  "name": "PagerDuty",
+  "slug": "pagerduty",
+  "description": "Incident management and response platform",
+  "category": "devtools",
+  "color": "#06AC38",
+  "website": "https://pagerduty.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.pagerduty.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Token token=",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_incidents",
+      "displayName": "List Incidents",
+      "description": "List incidents",
+      "method": "GET",
+      "endpoint": "/incidents",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "pagerduty",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://pagerduty.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

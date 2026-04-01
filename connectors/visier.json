@@ -1,0 +1,40 @@
+{
+  "name": "Visier",
+  "slug": "visier",
+  "description": "People analytics platform for workforce intelligence",
+  "category": "hr",
+  "color": "#0066CC",
+  "website": "https://visier.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.visier.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "run_query",
+      "displayName": "Run Query",
+      "description": "Run an analytics query",
+      "method": "POST",
+      "endpoint": "/data/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "visier",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://visier.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

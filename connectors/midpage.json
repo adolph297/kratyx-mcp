@@ -1,0 +1,40 @@
+{
+  "name": "Midpage Legal Research",
+  "slug": "midpage",
+  "description": "AI-powered legal research and case analysis platform",
+  "category": "knowledge",
+  "color": "#1E3A5F",
+  "website": "https://midpage.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.midpage.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_cases",
+      "displayName": "Search Cases",
+      "description": "Search legal cases",
+      "method": "POST",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "midpage",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://midpage.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

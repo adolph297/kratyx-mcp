@@ -1,0 +1,50 @@
+{
+  "name": "Blockscout",
+  "slug": "blockscout",
+  "description": "Open-source blockchain explorer for EVM chains",
+  "category": "data",
+  "color": "#6C63FF",
+  "website": "https://blockscout.com",
+  "authType": "none",
+  "baseUrl": "https://eth.blockscout.com/api/v2",
+  "actions": [
+    {
+      "name": "get_address",
+      "displayName": "Get Address",
+      "description": "Get address details",
+      "method": "GET",
+      "endpoint": "/addresses/{address}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_transactions",
+      "displayName": "List Transactions",
+      "description": "List transactions",
+      "method": "GET",
+      "endpoint": "/addresses/{address}/transactions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "blockscout",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://blockscout.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

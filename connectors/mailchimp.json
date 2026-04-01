@@ -1,0 +1,37 @@
+{
+  "name": "Mailchimp",
+  "slug": "mailchimp",
+  "description": "Email marketing and automation platform",
+  "category": "marketing",
+  "color": "#FFE01B",
+  "website": "https://mailchimp.com",
+  "authType": "oauth",
+  "baseUrl": "https://server.api.mailchimp.com/3.0",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://login.mailchimp.com/oauth2/authorize",
+    "tokenUrl": "https://login.mailchimp.com/oauth2/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_campaigns",
+      "displayName": "List Campaigns",
+      "description": "List email campaigns",
+      "method": "GET",
+      "endpoint": "/campaigns",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "mailchimp",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mailchimp.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

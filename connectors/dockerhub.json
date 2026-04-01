@@ -1,0 +1,40 @@
+{
+  "name": "Docker Hub",
+  "slug": "dockerhub",
+  "description": "Container registry for Docker images",
+  "category": "devtools",
+  "color": "#2496ED",
+  "website": "https://hub.docker.com",
+  "authType": "api_key",
+  "baseUrl": "https://hub.docker.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_repos",
+      "displayName": "List Repositories",
+      "description": "List repositories",
+      "method": "GET",
+      "endpoint": "/repositories/{namespace}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "namespace": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "dockerhub",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://hub.docker.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

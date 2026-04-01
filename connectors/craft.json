@@ -1,0 +1,33 @@
+{
+  "name": "Craft",
+  "slug": "craft",
+  "description": "Document and note-taking app for teams",
+  "category": "productivity",
+  "color": "#0066FF",
+  "website": "https://craft.do",
+  "authType": "api_key",
+  "baseUrl": "https://api.craft.do/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_documents",
+      "displayName": "List Documents",
+      "description": "List documents",
+      "method": "GET",
+      "endpoint": "/documents",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "craft",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://craft.do/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

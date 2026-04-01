@@ -1,0 +1,59 @@
+{
+  "name": "PubMed",
+  "slug": "pubmed",
+  "description": "Biomedical literature database from the National Library of Medicine",
+  "category": "knowledge",
+  "color": "#326599",
+  "website": "https://pubmed.ncbi.nlm.nih.gov",
+  "authType": "none",
+  "baseUrl": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Articles",
+      "description": "Search PubMed articles",
+      "method": "GET",
+      "endpoint": "/esearch.fcgi",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "db": {
+            "type": "string"
+          },
+          "term": {
+            "type": "string"
+          },
+          "retmax": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "fetch",
+      "displayName": "Fetch Article",
+      "description": "Fetch article details",
+      "method": "GET",
+      "endpoint": "/efetch.fcgi",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "db": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "pubmed",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://pubmed.ncbi.nlm.nih.gov/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

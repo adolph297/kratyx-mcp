@@ -1,0 +1,33 @@
+{
+  "name": "B12 Website Generator",
+  "slug": "b12",
+  "description": "AI-powered website builder and manager",
+  "category": "devtools",
+  "color": "#0D9488",
+  "website": "https://b12.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.b12.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "generate",
+      "displayName": "Generate Site",
+      "description": "Create site based on description",
+      "method": "POST",
+      "endpoint": "/sites",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "b12",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://b12.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

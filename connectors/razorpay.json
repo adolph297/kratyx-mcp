@@ -1,0 +1,51 @@
+{
+  "name": "Razorpay",
+  "slug": "razorpay",
+  "description": "Indian payment gateway and financial services platform",
+  "category": "finance",
+  "color": "#072654",
+  "website": "https://razorpay.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.razorpay.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_payments",
+      "displayName": "List Payments",
+      "description": "List all payments",
+      "method": "GET",
+      "endpoint": "/payments",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_order",
+      "displayName": "Create Order",
+      "description": "Create a payment order",
+      "method": "POST",
+      "endpoint": "/orders",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number"
+          },
+          "currency": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "razorpay",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://razorpay.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Elastic",
+  "slug": "elastic",
+  "description": "Search and observability platform",
+  "category": "data",
+  "color": "#005571",
+  "website": "https://elastic.co",
+  "authType": "api_key",
+  "baseUrl": "https://your-deployment.es.cloud.es.io",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "ApiKey ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search",
+      "description": "Search documents",
+      "method": "POST",
+      "endpoint": "/{index}/_search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "index": {
+            "type": "string"
+          },
+          "query": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "elastic",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://elastic.co/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "AirOps",
+  "slug": "airops",
+  "description": "AI workflow automation for growth and operations teams",
+  "category": "ai",
+  "color": "#6366F1",
+  "website": "https://airops.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.airops.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "run_workflow",
+      "displayName": "Run Workflow",
+      "description": "Execute an AI workflow",
+      "method": "POST",
+      "endpoint": "/workflows/{workflowId}/execute",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "workflowId": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "airops",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://airops.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "10x Genomics",
+  "slug": "10x-genomics",
+  "description": "Genomics data cloud for single-cell analysis",
+  "category": "knowledge",
+  "color": "#000000",
+  "website": "https://10xgenomics.com",
+  "authType": "api_key",
+  "baseUrl": "https://cloud.10xgenomics.com/api",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_samples",
+      "displayName": "List Samples",
+      "description": "List sequencing samples",
+      "method": "GET",
+      "endpoint": "/samples",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "10x-genomics",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://10xgenomics.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

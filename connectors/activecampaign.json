@@ -1,0 +1,40 @@
+{
+  "name": "ActiveCampaign",
+  "slug": "activecampaign",
+  "description": "Marketing automation and CRM platform",
+  "category": "marketing",
+  "color": "#356AE6",
+  "website": "https://activecampaign.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-account.api-us1.com/api/3",
+  "apiKeyConfig": {
+    "headerName": "Api-Token",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_contacts",
+      "displayName": "List Contacts",
+      "description": "List contacts",
+      "method": "GET",
+      "endpoint": "/contacts",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_campaigns",
+      "displayName": "List Campaigns",
+      "description": "List campaigns",
+      "method": "GET",
+      "endpoint": "/campaigns",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "activecampaign",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://activecampaign.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

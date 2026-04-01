@@ -1,0 +1,41 @@
+{
+  "name": "Vercel",
+  "slug": "vercel",
+  "description": "Cloud platform for deploying and hosting web applications",
+  "category": "devtools",
+  "color": "#000000",
+  "website": "https://vercel.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.vercel.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_projects",
+      "displayName": "List Projects",
+      "description": "List all projects",
+      "method": "GET",
+      "endpoint": "/v9/projects",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_deployments",
+      "displayName": "List Deployments",
+      "description": "List deployments",
+      "method": "GET",
+      "endpoint": "/v6/deployments",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "vercel",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://vercel.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

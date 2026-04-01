@@ -1,0 +1,40 @@
+{
+  "name": "Synapse.org",
+  "slug": "synapse",
+  "description": "Collaborative platform for biomedical research data sharing",
+  "category": "knowledge",
+  "color": "#1565C0",
+  "website": "https://synapse.org",
+  "authType": "api_key",
+  "baseUrl": "https://repo-prod.prod.sagebase.org/repo/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_entity",
+      "displayName": "Get Entity",
+      "description": "Get a Synapse entity",
+      "method": "GET",
+      "endpoint": "/entity/{id}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "synapse",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://synapse.org/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Desktop Commander",
+  "slug": "desktop-commander",
+  "description": "Control and automate desktop applications",
+  "category": "devtools",
+  "color": "#374151",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "run_app",
+      "displayName": "Run Application",
+      "description": "Launch a desktop app",
+      "method": "POST",
+      "endpoint": "/launch",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "app_name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "desktop-commander",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

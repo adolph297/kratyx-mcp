@@ -1,0 +1,50 @@
+{
+  "name": "Metabase",
+  "slug": "metabase",
+  "description": "Open-source business intelligence and analytics platform",
+  "category": "analytics",
+  "color": "#509EE3",
+  "website": "https://metabase.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-instance.metabaseapp.com/api",
+  "apiKeyConfig": {
+    "headerName": "X-Metabase-Session",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_dashboards",
+      "displayName": "List Dashboards",
+      "description": "List dashboards",
+      "method": "GET",
+      "endpoint": "/dashboard",
+      "inputSchema": {}
+    },
+    {
+      "name": "run_query",
+      "displayName": "Run Query",
+      "description": "Execute a question/query",
+      "method": "POST",
+      "endpoint": "/dataset",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "number"
+          },
+          "native": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "metabase",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://metabase.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

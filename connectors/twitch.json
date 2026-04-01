@@ -1,0 +1,39 @@
+{
+  "name": "Twitch",
+  "slug": "twitch",
+  "description": "Live streaming platform for gaming and entertainment",
+  "category": "social",
+  "color": "#9146FF",
+  "website": "https://twitch.tv",
+  "authType": "oauth",
+  "baseUrl": "https://api.twitch.tv/helix",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://id.twitch.tv/oauth2/authorize",
+    "tokenUrl": "https://id.twitch.tv/oauth2/token",
+    "scopes": [
+      "user:read:email"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "get_users",
+      "displayName": "Get Users",
+      "description": "Get user info",
+      "method": "GET",
+      "endpoint": "/users",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "twitch",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://twitch.tv/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

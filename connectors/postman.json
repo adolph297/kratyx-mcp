@@ -1,0 +1,40 @@
+{
+  "name": "Postman",
+  "slug": "postman",
+  "description": "API development and testing collaboration platform",
+  "category": "devtools",
+  "color": "#FF6C37",
+  "website": "https://postman.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.getpostman.com",
+  "apiKeyConfig": {
+    "headerName": "X-Api-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_collections",
+      "displayName": "List Collections",
+      "description": "List API collections",
+      "method": "GET",
+      "endpoint": "/collections",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_environments",
+      "displayName": "List Environments",
+      "description": "List environments",
+      "method": "GET",
+      "endpoint": "/environments",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "postman",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://postman.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

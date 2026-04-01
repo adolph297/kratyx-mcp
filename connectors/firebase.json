@@ -1,0 +1,33 @@
+{
+  "name": "Firebase",
+  "slug": "firebase",
+  "description": "Google's app development platform for mobile and web",
+  "category": "cloud",
+  "color": "#FFCA28",
+  "website": "https://firebase.google.com",
+  "authType": "api_key",
+  "baseUrl": "https://firebase.googleapis.com/v1beta1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_projects",
+      "displayName": "List Projects",
+      "description": "List projects",
+      "method": "GET",
+      "endpoint": "/projects",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "firebase",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://firebase.google.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

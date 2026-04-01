@@ -1,0 +1,57 @@
+{
+  "name": "PayPal",
+  "slug": "paypal",
+  "description": "Online payment platform for money transfers and payments",
+  "category": "finance",
+  "color": "#003087",
+  "website": "https://paypal.com",
+  "authType": "oauth",
+  "baseUrl": "https://api-m.paypal.com/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://www.paypal.com/signin/authorize",
+    "tokenUrl": "https://api-m.paypal.com/v1/oauth2/token",
+    "scopes": [
+      "openid"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_transactions",
+      "displayName": "List Transactions",
+      "description": "List transactions",
+      "method": "GET",
+      "endpoint": "/reporting/transactions",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_order",
+      "displayName": "Create Order",
+      "description": "Create a payment order",
+      "method": "POST",
+      "endpoint": "/checkout/orders",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intent": {
+            "type": "string"
+          },
+          "purchase_units": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "paypal",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://paypal.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

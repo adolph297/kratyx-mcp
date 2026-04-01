@@ -1,0 +1,40 @@
+{
+  "name": "MotherDuck",
+  "slug": "motherduck",
+  "description": "Serverless analytics platform built on DuckDB",
+  "category": "data",
+  "color": "#FBBF24",
+  "website": "https://motherduck.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.motherduck.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "Run Query",
+      "description": "Execute a SQL query",
+      "method": "POST",
+      "endpoint": "/sql",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sql": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "motherduck",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://motherduck.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

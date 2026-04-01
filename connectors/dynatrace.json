@@ -1,0 +1,48 @@
+{
+  "name": "Dynatrace",
+  "slug": "dynatrace",
+  "description": "Software intelligence and application performance monitoring",
+  "category": "devtools",
+  "color": "#1496FF",
+  "website": "https://dynatrace.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-env.live.dynatrace.com/api/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Api-Token ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_problems",
+      "displayName": "List Problems",
+      "description": "List detected problems",
+      "method": "GET",
+      "endpoint": "/problems",
+      "inputSchema": {}
+    },
+    {
+      "name": "get_metrics",
+      "displayName": "Get Metrics",
+      "description": "Get metrics data",
+      "method": "GET",
+      "endpoint": "/metrics/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "metricSelector": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "dynatrace",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://dynatrace.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

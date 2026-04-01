@@ -1,0 +1,33 @@
+{
+  "name": "Cloudglue",
+  "slug": "cloudglue",
+  "description": "Cloud resource integration and management",
+  "category": "cloud",
+  "color": "#06B6D4",
+  "website": "#",
+  "authType": "api_key",
+  "baseUrl": "https://api.cloudglue.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_resources",
+      "displayName": "List Resources",
+      "description": "List cloud infrastructure",
+      "method": "GET",
+      "endpoint": "/resources",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "cloudglue",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

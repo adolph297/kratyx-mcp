@@ -1,0 +1,58 @@
+{
+  "name": "Spotify",
+  "slug": "spotify",
+  "description": "Music streaming platform with developer API",
+  "category": "social",
+  "color": "#1DB954",
+  "website": "https://spotify.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.spotify.com/v1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.spotify.com/authorize",
+    "tokenUrl": "https://accounts.spotify.com/api/token",
+    "scopes": [
+      "user-read-playback-state",
+      "user-modify-playback-state"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "get_player",
+      "displayName": "Get Player",
+      "description": "Get current playback state",
+      "method": "GET",
+      "endpoint": "/me/player",
+      "inputSchema": {}
+    },
+    {
+      "name": "search",
+      "displayName": "Search",
+      "description": "Search tracks, albums, artists",
+      "method": "GET",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "spotify",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://spotify.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

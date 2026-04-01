@@ -1,0 +1,38 @@
+{
+  "name": "bioRxiv",
+  "slug": "biorxiv",
+  "description": "Preprint server for biology research papers",
+  "category": "knowledge",
+  "color": "#B71C1C",
+  "website": "https://biorxiv.org",
+  "authType": "none",
+  "baseUrl": "https://api.biorxiv.org",
+  "actions": [
+    {
+      "name": "get_details",
+      "displayName": "Get Paper Details",
+      "description": "Get preprint details",
+      "method": "GET",
+      "endpoint": "/details/{server}/{interval}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "server": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "biorxiv",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://biorxiv.org/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Tango",
+  "slug": "tango",
+  "description": "Workflow documentation and process capture tool",
+  "category": "productivity",
+  "color": "#FF6B4A",
+  "website": "https://tango.us",
+  "authType": "api_key",
+  "baseUrl": "https://api.tango.us/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_workflows",
+      "displayName": "List Workflows",
+      "description": "List captured workflows",
+      "method": "GET",
+      "endpoint": "/workflows",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "tango",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://tango.us/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

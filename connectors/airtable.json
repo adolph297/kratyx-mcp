@@ -1,0 +1,43 @@
+{
+  "name": "Airtable",
+  "slug": "airtable",
+  "description": "Low-code platform for building collaborative apps with spreadsheet-database hybrid",
+  "category": "productivity",
+  "color": "#18BFFF",
+  "website": "https://airtable.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.airtable.com/v0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_records",
+      "displayName": "List Records",
+      "description": "List records from a table",
+      "method": "GET",
+      "endpoint": "/{baseId}/{tableIdOrName}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "baseId": {
+            "type": "string"
+          },
+          "tableIdOrName": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "airtable",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://airtable.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

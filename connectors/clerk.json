@@ -1,0 +1,48 @@
+{
+  "name": "Clerk",
+  "slug": "clerk",
+  "description": "Authentication and user management platform for developers",
+  "category": "security",
+  "color": "#6C47FF",
+  "website": "https://clerk.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.clerk.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_users",
+      "displayName": "List Users",
+      "description": "List all users",
+      "method": "GET",
+      "endpoint": "/users",
+      "inputSchema": {}
+    },
+    {
+      "name": "get_user",
+      "displayName": "Get User",
+      "description": "Get a user by ID",
+      "method": "GET",
+      "endpoint": "/users/{userId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "clerk",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clerk.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

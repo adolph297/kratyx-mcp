@@ -1,0 +1,46 @@
+{
+  "name": "Bitbucket",
+  "slug": "bitbucket",
+  "description": "Git-based code hosting and collaboration platform",
+  "category": "devtools",
+  "color": "#0052CC",
+  "website": "https://bitbucket.org",
+  "authType": "oauth",
+  "baseUrl": "https://api.bitbucket.org/2.0",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://bitbucket.org/site/oauth2/authorize",
+    "tokenUrl": "https://bitbucket.org/site/oauth2/access_token",
+    "scopes": [
+      "repository"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_repos",
+      "displayName": "List Repositories",
+      "description": "List repositories",
+      "method": "GET",
+      "endpoint": "/repositories/{workspace}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "workspace": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "bitbucket",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://bitbucket.org/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

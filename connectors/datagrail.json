@@ -1,0 +1,33 @@
+{
+  "name": "DataGrail",
+  "slug": "datagrail",
+  "description": "Privacy management platform for data rights automation",
+  "category": "security",
+  "color": "#00D4AA",
+  "website": "https://datagrail.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.datagrail.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_requests",
+      "displayName": "List Requests",
+      "description": "List privacy requests",
+      "method": "GET",
+      "endpoint": "/requests",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "datagrail",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://datagrail.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

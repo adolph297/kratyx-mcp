@@ -1,0 +1,33 @@
+{
+  "name": "Fantastical",
+  "slug": "fantastical",
+  "description": "Calendar app with natural language event creation",
+  "category": "productivity",
+  "color": "#CC2128",
+  "website": "https://flexibits.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.flexibits.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_events",
+      "displayName": "List Events",
+      "description": "List calendar events",
+      "method": "GET",
+      "endpoint": "/events",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "fantastical",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://flexibits.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

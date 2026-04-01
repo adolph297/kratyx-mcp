@@ -1,0 +1,55 @@
+{
+  "name": "Cloudflare Developer Platform",
+  "slug": "cloudflare-dev",
+  "description": "Cloudflare Workers, Pages, R2, and developer services",
+  "category": "cloud",
+  "color": "#F48120",
+  "website": "https://developers.cloudflare.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.cloudflare.com/client/v4",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_workers",
+      "displayName": "List Workers",
+      "description": "List all Workers scripts",
+      "method": "GET",
+      "endpoint": "/accounts/{accountId}/workers/scripts",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_pages_projects",
+      "displayName": "List Pages Projects",
+      "description": "List Cloudflare Pages projects",
+      "method": "GET",
+      "endpoint": "/accounts/{accountId}/pages/projects",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "cloudflare-dev",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://developers.cloudflare.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

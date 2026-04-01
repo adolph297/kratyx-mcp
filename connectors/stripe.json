@@ -1,0 +1,77 @@
+{
+  "name": "Stripe",
+  "slug": "stripe",
+  "description": "Payment processing platform for internet businesses",
+  "category": "finance",
+  "icon": "stripe",
+  "color": "#635BFF",
+  "website": "https://stripe.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.stripe.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_customers",
+      "displayName": "List Customers",
+      "description": "List all customers",
+      "method": "GET",
+      "endpoint": "/customers",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number", "default": 10 }
+        }
+      }
+    },
+    {
+      "name": "create_customer",
+      "displayName": "Create Customer",
+      "description": "Create a new customer",
+      "method": "POST",
+      "endpoint": "/customers",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "email": { "type": "string", "required": true },
+          "name": { "type": "string" }
+        }
+      }
+    },
+    {
+      "name": "list_payments",
+      "displayName": "List Payments",
+      "description": "List payment intents",
+      "method": "GET",
+      "endpoint": "/payment_intents",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "limit": { "type": "number", "default": 10 }
+        }
+      }
+    },
+    {
+      "name": "create_payment",
+      "displayName": "Create Payment Intent",
+      "description": "Create a payment intent",
+      "method": "POST",
+      "endpoint": "/payment_intents",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "amount": { "type": "number", "required": true },
+          "currency": { "type": "string", "required": true }
+        }
+      }
+    }
+  ],
+  "webhookSupport": true,
+  "rateLimits": { "requestsPerMinute": 100 },
+  "documentation": "https://stripe.com/docs/api",
+  "version": "1.0.0",
+  "status": "active"
+}

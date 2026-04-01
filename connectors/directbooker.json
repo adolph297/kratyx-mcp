@@ -1,0 +1,33 @@
+{
+  "name": "DirectBooker",
+  "slug": "directbooker",
+  "description": "Property management and vacation rental booking platform",
+  "category": "ecommerce",
+  "color": "#2196F3",
+  "website": "https://directbooker.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.directbooker.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_properties",
+      "displayName": "List Properties",
+      "description": "List rental properties",
+      "method": "GET",
+      "endpoint": "/properties",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "directbooker",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://directbooker.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

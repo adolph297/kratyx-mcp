@@ -1,0 +1,33 @@
+{
+  "name": "Base44",
+  "slug": "base44",
+  "description": "No-code application builder platform",
+  "category": "devtools",
+  "color": "#000000",
+  "website": "https://base44.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.base44.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_apps",
+      "displayName": "List Apps",
+      "description": "List applications",
+      "method": "GET",
+      "endpoint": "/apps",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "base44",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://base44.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

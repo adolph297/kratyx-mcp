@@ -1,0 +1,48 @@
+{
+  "name": "Netlify",
+  "slug": "netlify",
+  "description": "Web development platform for deploying and hosting modern web apps",
+  "category": "devtools",
+  "color": "#00C7B7",
+  "website": "https://netlify.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.netlify.com/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_sites",
+      "displayName": "List Sites",
+      "description": "List all sites",
+      "method": "GET",
+      "endpoint": "/sites",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_deploys",
+      "displayName": "List Deploys",
+      "description": "List deployments",
+      "method": "GET",
+      "endpoint": "/sites/{siteId}/deploys",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "netlify",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://netlify.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Smartsheet",
+  "slug": "smartsheet",
+  "description": "Work management platform for collaborative planning and project management",
+  "category": "productivity",
+  "color": "#0B63CE",
+  "website": "https://smartsheet.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.smartsheet.com/2.0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_sheets",
+      "displayName": "List Sheets",
+      "description": "List all sheets",
+      "method": "GET",
+      "endpoint": "/sheets",
+      "inputSchema": {}
+    },
+    {
+      "name": "get_sheet",
+      "displayName": "Get Sheet",
+      "description": "Get a sheet by ID",
+      "method": "GET",
+      "endpoint": "/sheets/{sheetId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sheetId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "smartsheet",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://smartsheet.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "MongoDB Atlas",
+  "slug": "mongodb-atlas",
+  "description": "Cloud-hosted MongoDB database service",
+  "category": "data",
+  "color": "#47A248",
+  "website": "https://mongodb.com",
+  "authType": "api_key",
+  "baseUrl": "https://cloud.mongodb.com/api/atlas/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_clusters",
+      "displayName": "List Clusters",
+      "description": "List clusters",
+      "method": "GET",
+      "endpoint": "/groups/{groupId}/clusters",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "mongodb-atlas",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mongodb.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

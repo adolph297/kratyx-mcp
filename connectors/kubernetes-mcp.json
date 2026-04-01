@@ -1,0 +1,40 @@
+{
+  "name": "Kubernetes MCP",
+  "slug": "kubernetes-mcp",
+  "description": "Manage and monitor Kubernetes clusters",
+  "category": "cloud",
+  "color": "#326CE5",
+  "website": "#",
+  "authType": "api_key",
+  "baseUrl": "https://api.k8s.mcp/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_pods",
+      "displayName": "List Pods",
+      "description": "List cluster pods",
+      "method": "GET",
+      "endpoint": "/pods",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "namespace": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "kubernetes-mcp",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

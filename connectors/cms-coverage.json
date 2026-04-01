@@ -1,0 +1,35 @@
+{
+  "name": "CMS Coverage",
+  "slug": "cms-coverage",
+  "description": "CMS coverage and Medicare/Medicaid data",
+  "category": "knowledge",
+  "color": "#003B71",
+  "website": "https://cms.gov",
+  "authType": "none",
+  "baseUrl": "https://data.cms.gov/provider-data/api/1",
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Coverage",
+      "description": "Search CMS coverage data",
+      "method": "GET",
+      "endpoint": "/datastore/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "cms-coverage",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://cms.gov/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

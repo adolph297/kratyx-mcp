@@ -1,0 +1,39 @@
+{
+  "name": "TomTom Maps",
+  "slug": "tomtom",
+  "description": "Mapping and location technology platform",
+  "category": "data",
+  "color": "#E3001B",
+  "website": "https://developer.tomtom.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.tomtom.com",
+  "apiKeyConfig": {
+    "headerName": "key",
+    "location": "query"
+  },
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Places",
+      "description": "Search for places",
+      "method": "GET",
+      "endpoint": "/search/2/search/{query}.json",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "tomtom",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://developer.tomtom.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

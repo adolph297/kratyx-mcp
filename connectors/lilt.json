@@ -1,0 +1,45 @@
+{
+  "name": "LILT",
+  "slug": "lilt",
+  "description": "AI-powered translation and localization platform",
+  "category": "ai",
+  "color": "#2563EB",
+  "website": "https://lilt.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.lilt.com/v2",
+  "apiKeyConfig": {
+    "headerName": "key",
+    "location": "query"
+  },
+  "actions": [
+    {
+      "name": "translate",
+      "displayName": "Translate",
+      "description": "Translate text",
+      "method": "POST",
+      "endpoint": "/translate",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "lilt",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://lilt.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

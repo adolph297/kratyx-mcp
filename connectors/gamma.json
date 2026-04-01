@@ -1,0 +1,43 @@
+{
+  "name": "Gamma",
+  "slug": "gamma",
+  "description": "AI-powered presentation and document generation platform",
+  "category": "ai",
+  "color": "#7C3AED",
+  "website": "https://gamma.app",
+  "authType": "api_key",
+  "baseUrl": "https://api.gamma.app/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "create_presentation",
+      "displayName": "Create Presentation",
+      "description": "Generate a presentation with AI",
+      "method": "POST",
+      "endpoint": "/presentations",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "style": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "gamma",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://gamma.app/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Windows-MCP",
+  "slug": "windows-mcp",
+  "description": "Universal Windows system control through MCP",
+  "category": "devtools",
+  "color": "#0078D4",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "list_processes",
+      "displayName": "List Processes",
+      "description": "List running processes",
+      "method": "GET",
+      "endpoint": "/processes",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "windows-mcp",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

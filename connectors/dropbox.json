@@ -1,0 +1,44 @@
+{
+  "name": "Dropbox",
+  "slug": "dropbox",
+  "description": "Cloud storage for files and collaboration",
+  "category": "storage",
+  "color": "#0061FF",
+  "website": "https://dropbox.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.dropboxapi.com/2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://www.dropbox.com/oauth2/authorize",
+    "tokenUrl": "https://api.dropboxapi.com/oauth2/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_folder",
+      "displayName": "List Folder",
+      "description": "List folder contents",
+      "method": "POST",
+      "endpoint": "/files/list_folder",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "dropbox",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://dropbox.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

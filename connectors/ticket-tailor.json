@@ -1,0 +1,33 @@
+{
+  "name": "Ticket Tailor",
+  "slug": "ticket-tailor",
+  "description": "Event ticketing and management platform",
+  "category": "ecommerce",
+  "color": "#FF6B6B",
+  "website": "https://tickettailor.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.tickettailor.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_events",
+      "displayName": "List Events",
+      "description": "List events",
+      "method": "GET",
+      "endpoint": "/events",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "ticket-tailor",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://tickettailor.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "iMessages",
+  "slug": "imessages",
+  "description": "Read and send messages through Apple iMessages",
+  "category": "communication",
+  "color": "#34D399",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "send_message",
+      "displayName": "Send Message",
+      "description": "Send an iMessage",
+      "method": "POST",
+      "endpoint": "/send",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "to": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "imessages",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

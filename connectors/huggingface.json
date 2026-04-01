@@ -1,0 +1,51 @@
+{
+  "name": "Hugging Face",
+  "slug": "huggingface",
+  "description": "AI model hub for NLP, computer vision, and machine learning models",
+  "category": "ai",
+  "color": "#FFD21E",
+  "website": "https://huggingface.co",
+  "authType": "api_key",
+  "baseUrl": "https://api-inference.huggingface.co",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "inference",
+      "displayName": "Run Inference",
+      "description": "Run model inference",
+      "method": "POST",
+      "endpoint": "/models/{modelId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "modelId": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_models",
+      "displayName": "List Models",
+      "description": "List available models",
+      "method": "GET",
+      "endpoint": "/api/models",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "huggingface",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://huggingface.co/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

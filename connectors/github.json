@@ -1,0 +1,31 @@
+{
+  "name": "GitHub",
+  "slug": "github",
+  "description": "Development platform for version control and collaboration",
+  "category": "devtools",
+  "icon": "github",
+  "color": "#181717",
+  "website": "https://github.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.github.com",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://github.com/login/oauth/authorize",
+    "tokenUrl": "https://github.com/login/oauth/access_token",
+    "scopes": ["repo", "user", "read:org"],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    { "name": "list_repos", "displayName": "List Repositories", "description": "List authenticated user's repos", "method": "GET", "endpoint": "/user/repos", "inputSchema": {} },
+    { "name": "get_repo", "displayName": "Get Repository", "description": "Get a repository by owner/name", "method": "GET", "endpoint": "/repos/{owner}/{repo}", "inputSchema": { "type": "object", "properties": { "owner": { "type": "string" }, "repo": { "type": "string" } } } },
+    { "name": "create_issue", "displayName": "Create Issue", "description": "Create an issue in a repo", "method": "POST", "endpoint": "/repos/{owner}/{repo}/issues", "inputSchema": { "type": "object", "properties": { "title": { "type": "string" }, "body": { "type": "string" } } } },
+    { "name": "list_pull_requests", "displayName": "List Pull Requests", "description": "List PRs for a repo", "method": "GET", "endpoint": "/repos/{owner}/{repo}/pulls", "inputSchema": {} }
+  ],
+  "webhookSupport": true,
+  "rateLimits": { "requestsPerMinute": 60 },
+  "documentation": "https://docs.github.com/en/rest",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Honeycomb",
+  "slug": "honeycomb",
+  "description": "Observability platform for debugging production systems",
+  "category": "devtools",
+  "color": "#F5A623",
+  "website": "https://honeycomb.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.honeycomb.io/1",
+  "apiKeyConfig": {
+    "headerName": "X-Honeycomb-Team",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_datasets",
+      "displayName": "List Datasets",
+      "description": "List datasets",
+      "method": "GET",
+      "endpoint": "/datasets",
+      "inputSchema": {}
+    },
+    {
+      "name": "query",
+      "displayName": "Run Query",
+      "description": "Run an analytics query",
+      "method": "POST",
+      "endpoint": "/queries/{dataset}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "honeycomb",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://honeycomb.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

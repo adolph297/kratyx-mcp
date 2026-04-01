@@ -1,0 +1,43 @@
+{
+  "name": "Local Falcon",
+  "slug": "local-falcon",
+  "description": "Local SEO rank tracking and geo-grid visualization",
+  "category": "marketing",
+  "color": "#FB923C",
+  "website": "https://localfalcon.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.localfalcon.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "run_scan",
+      "displayName": "Run Scan",
+      "description": "Run a local rank scan",
+      "method": "POST",
+      "endpoint": "/scans",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "local-falcon",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://localfalcon.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Three.js 3D Viewer",
+  "slug": "threejs-viewer",
+  "description": "3D model viewer and rendering using Three.js",
+  "category": "productivity",
+  "color": "#049EF4",
+  "website": "https://threejs.org",
+  "authType": "none",
+  "baseUrl": "https://threejs.org/api",
+  "actions": [
+    {
+      "name": "render_scene",
+      "displayName": "Render Scene",
+      "description": "Render a 3D scene",
+      "method": "POST",
+      "endpoint": "/render",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "scene": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "threejs-viewer",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://threejs.org/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Kiwi.com",
+  "slug": "kiwi",
+  "description": "Travel search engine for flights and transport",
+  "category": "ecommerce",
+  "color": "#00A991",
+  "website": "https://kiwi.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.tequila.kiwi.com/v2",
+  "apiKeyConfig": {
+    "headerName": "apikey",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_flights",
+      "displayName": "Search Flights",
+      "description": "Search for flights",
+      "method": "GET",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fly_from": {
+            "type": "string"
+          },
+          "fly_to": {
+            "type": "string"
+          },
+          "date_from": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "kiwi",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://kiwi.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

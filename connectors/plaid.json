@@ -1,0 +1,39 @@
+{
+  "name": "Plaid Developer Tools",
+  "slug": "plaid",
+  "description": "Financial services API for banking data and payments",
+  "category": "finance",
+  "color": "#111111",
+  "website": "https://plaid.com",
+  "authType": "api_key",
+  "baseUrl": "https://production.plaid.com",
+  "apiKeyConfig": {
+    "headerName": "PLAID-SECRET",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_accounts",
+      "displayName": "Get Accounts",
+      "description": "Get linked bank accounts",
+      "method": "POST",
+      "endpoint": "/accounts/get",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "plaid",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://plaid.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Jaz Accounting",
+  "slug": "jaz",
+  "description": "Cloud accounting and invoicing for modern teams",
+  "category": "finance",
+  "color": "#F59E0B",
+  "website": "https://jaz.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.jaz.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_invoices",
+      "displayName": "List Invoices",
+      "description": "Get recent invoices",
+      "method": "GET",
+      "endpoint": "/invoices",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "jaz",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://jaz.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

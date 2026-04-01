@@ -1,0 +1,40 @@
+{
+  "name": "Aura",
+  "slug": "aura",
+  "description": "Digital security and identity protection platform",
+  "category": "security",
+  "color": "#1E40AF",
+  "website": "https://aura.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.aura.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "check_identity",
+      "displayName": "Check Identity",
+      "description": "Check identity security",
+      "method": "POST",
+      "endpoint": "/identity/check",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "aura",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://aura.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Drafts",
+  "slug": "drafts",
+  "description": "Quick text capture and workflow automation app",
+  "category": "productivity",
+  "color": "#4F46E5",
+  "website": "https://getdrafts.com",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "create_draft",
+      "displayName": "Create Draft",
+      "description": "Save a new text draft",
+      "method": "POST",
+      "endpoint": "/create",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "drafts",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://getdrafts.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

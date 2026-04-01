@@ -1,0 +1,55 @@
+{
+  "name": "Amplitude (Full)",
+  "slug": "amplitude-full",
+  "description": "Digital analytics platform for product intelligence (full API)",
+  "category": "analytics",
+  "color": "#1C1C5E",
+  "website": "https://amplitude.com",
+  "authType": "api_key",
+  "baseUrl": "https://analytics.amplitude.com/api/3",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_events",
+      "displayName": "Get Events",
+      "description": "Get event segmentation data",
+      "method": "GET",
+      "endpoint": "/chart/e-{chartId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "chartId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_users",
+      "displayName": "Get User Activity",
+      "description": "Get user activity",
+      "method": "GET",
+      "endpoint": "/usersearch",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "amplitude-full",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://amplitude.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

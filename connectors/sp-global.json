@@ -1,0 +1,40 @@
+{
+  "name": "S&P Global",
+  "slug": "sp-global",
+  "description": "Financial data, analytics, and credit ratings provider",
+  "category": "finance",
+  "color": "#003B71",
+  "website": "https://spglobal.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.spglobal.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_market_data",
+      "displayName": "Get Market Data",
+      "description": "Get financial market data",
+      "method": "GET",
+      "endpoint": "/market-data",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "sp-global",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://spglobal.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

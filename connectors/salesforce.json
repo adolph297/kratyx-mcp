@@ -1,0 +1,46 @@
+{
+  "name": "Salesforce",
+  "slug": "salesforce",
+  "description": "Cloud-based CRM platform for sales and customer service",
+  "category": "crm",
+  "color": "#00A1E0",
+  "website": "https://salesforce.com",
+  "authType": "oauth",
+  "baseUrl": "https://login.salesforce.com/services",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://login.salesforce.com/services/oauth2/authorize",
+    "tokenUrl": "https://login.salesforce.com/services/oauth2/token",
+    "scopes": [
+      "full"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "SOQL Query",
+      "description": "Execute a SOQL query",
+      "method": "GET",
+      "endpoint": "/data/v58.0/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "salesforce",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://salesforce.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

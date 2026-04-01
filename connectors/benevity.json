@@ -1,0 +1,33 @@
+{
+  "name": "Benevity",
+  "slug": "benevity",
+  "description": "Corporate social responsibility and charitable giving platform",
+  "category": "hr",
+  "color": "#00C389",
+  "website": "https://benevity.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.benevity.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_campaigns",
+      "displayName": "List Campaigns",
+      "description": "List giving campaigns",
+      "method": "GET",
+      "endpoint": "/campaigns",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "benevity",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://benevity.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

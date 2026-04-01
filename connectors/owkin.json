@@ -1,0 +1,33 @@
+{
+  "name": "Owkin",
+  "slug": "owkin",
+  "description": "AI-driven discovery and diagnostics for healthcare",
+  "category": "knowledge",
+  "color": "#000000",
+  "website": "https://owkin.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.owkin.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_projects",
+      "displayName": "List Projects",
+      "description": "List research projects",
+      "method": "GET",
+      "endpoint": "/projects",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "owkin",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://owkin.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

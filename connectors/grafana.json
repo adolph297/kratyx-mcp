@@ -1,0 +1,41 @@
+{
+  "name": "Grafana",
+  "slug": "grafana",
+  "description": "Open-source observability and monitoring dashboards platform",
+  "category": "devtools",
+  "color": "#F46800",
+  "website": "https://grafana.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-instance.grafana.net/api",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_dashboards",
+      "displayName": "List Dashboards",
+      "description": "List dashboards",
+      "method": "GET",
+      "endpoint": "/search",
+      "inputSchema": {}
+    },
+    {
+      "name": "get_datasources",
+      "displayName": "Get Data Sources",
+      "description": "List data sources",
+      "method": "GET",
+      "endpoint": "/datasources",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "grafana",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://grafana.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

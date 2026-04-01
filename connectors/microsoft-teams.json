@@ -1,0 +1,58 @@
+{
+  "name": "Microsoft Teams",
+  "slug": "microsoft-teams",
+  "description": "Communication and collaboration hub for Microsoft 365",
+  "category": "communication",
+  "color": "#6264A7",
+  "website": "https://teams.microsoft.com",
+  "authType": "oauth",
+  "baseUrl": "https://graph.microsoft.com/v1.0",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+    "tokenUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+    "scopes": [
+      "Chat.ReadWrite",
+      "Team.ReadBasic.All"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "send_message",
+      "displayName": "Send Message",
+      "description": "Send a chat message",
+      "method": "POST",
+      "endpoint": "/chats/{chatId}/messages",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "chatId": {
+            "type": "string"
+          },
+          "body": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_teams",
+      "displayName": "List Teams",
+      "description": "List joined teams",
+      "method": "GET",
+      "endpoint": "/me/joinedTeams",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "microsoft-teams",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://teams.microsoft.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

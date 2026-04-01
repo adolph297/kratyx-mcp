@@ -1,0 +1,33 @@
+{
+  "name": "Make",
+  "slug": "make",
+  "description": "Visual automation platform (formerly Integromat) for complex workflows",
+  "category": "automation",
+  "color": "#6D29D9",
+  "website": "https://make.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.make.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Token ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_scenarios",
+      "displayName": "List Scenarios",
+      "description": "List automation scenarios",
+      "method": "GET",
+      "endpoint": "/scenarios",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "make",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://make.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

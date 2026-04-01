@@ -1,0 +1,40 @@
+{
+  "name": "Morningstar",
+  "slug": "morningstar",
+  "description": "Investment research and financial data analytics provider",
+  "category": "finance",
+  "color": "#E63946",
+  "website": "https://morningstar.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.morningstar.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_fund_data",
+      "displayName": "Get Fund Data",
+      "description": "Get fund performance data",
+      "method": "GET",
+      "endpoint": "/funds/{fundId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fundId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "morningstar",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://morningstar.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

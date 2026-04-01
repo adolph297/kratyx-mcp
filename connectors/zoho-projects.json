@@ -1,0 +1,46 @@
+{
+  "name": "Zoho Projects",
+  "slug": "zoho-projects",
+  "description": "Project management software for planning and collaboration",
+  "category": "productivity",
+  "color": "#E42527",
+  "website": "https://zoho.com/projects",
+  "authType": "oauth",
+  "baseUrl": "https://projectsapi.zoho.com/restapi",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.zoho.com/oauth/v2/auth",
+    "tokenUrl": "https://accounts.zoho.com/oauth/v2/token",
+    "scopes": [
+      "ZohoProjects.portals.READ"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_projects",
+      "displayName": "List Projects",
+      "description": "List all projects",
+      "method": "GET",
+      "endpoint": "/portals/{portalId}/projects/",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "portalId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "zoho-projects",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zoho.com/projects/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

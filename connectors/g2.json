@@ -1,0 +1,40 @@
+{
+  "name": "G2",
+  "slug": "g2",
+  "description": "Software review and comparison marketplace",
+  "category": "marketing",
+  "color": "#FF492C",
+  "website": "https://g2.com",
+  "authType": "api_key",
+  "baseUrl": "https://data.g2.com/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Token token=",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_reviews",
+      "displayName": "Get Reviews",
+      "description": "Get product reviews",
+      "method": "GET",
+      "endpoint": "/products/{productId}/reviews",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "productId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "g2",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://g2.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

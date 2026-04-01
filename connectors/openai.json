@@ -1,0 +1,22 @@
+{
+  "name": "OpenAI",
+  "slug": "openai",
+  "description": "AI platform for GPT models, DALL-E, and more",
+  "category": "ai",
+  "icon": "openai",
+  "color": "#412991",
+  "website": "https://openai.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.openai.com/v1",
+  "apiKeyConfig": { "headerName": "Authorization", "prefix": "Bearer ", "location": "header" },
+  "actions": [
+    { "name": "chat_completion", "displayName": "Chat Completion", "description": "Create a chat completion", "method": "POST", "endpoint": "/chat/completions", "inputSchema": { "type": "object", "properties": { "model": { "type": "string", "default": "gpt-4" }, "messages": { "type": "array" } } } },
+    { "name": "list_models", "displayName": "List Models", "description": "List available models", "method": "GET", "endpoint": "/models", "inputSchema": {} },
+    { "name": "create_image", "displayName": "Create Image", "description": "Generate an image with DALL-E", "method": "POST", "endpoint": "/images/generations", "inputSchema": { "type": "object", "properties": { "prompt": { "type": "string" }, "n": { "type": "number", "default": 1 } } } }
+  ],
+  "webhookSupport": false,
+  "rateLimits": { "requestsPerMinute": 60 },
+  "documentation": "https://platform.openai.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

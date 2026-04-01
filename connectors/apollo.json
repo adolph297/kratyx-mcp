@@ -1,0 +1,57 @@
+{
+  "name": "Apollo.io",
+  "slug": "apollo",
+  "description": "Sales intelligence and engagement platform for B2B prospecting",
+  "category": "crm",
+  "color": "#6C5CE7",
+  "website": "https://apollo.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.apollo.io/v1",
+  "apiKeyConfig": {
+    "headerName": "X-Api-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_people",
+      "displayName": "Search People",
+      "description": "Search for contacts",
+      "method": "POST",
+      "endpoint": "/people/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "person_titles": {
+            "type": "array"
+          },
+          "q_organization_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "enrich_person",
+      "displayName": "Enrich Person",
+      "description": "Enrich a person record",
+      "method": "POST",
+      "endpoint": "/people/match",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "apollo",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://apollo.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

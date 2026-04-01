@@ -1,0 +1,35 @@
+{
+  "name": "Excalidraw",
+  "slug": "excalidraw",
+  "description": "Open-source virtual whiteboard for sketching hand-drawn diagrams",
+  "category": "productivity",
+  "color": "#6965DB",
+  "website": "https://excalidraw.com",
+  "authType": "none",
+  "baseUrl": "https://json.excalidraw.com/api/v2",
+  "actions": [
+    {
+      "name": "get_drawing",
+      "displayName": "Get Drawing",
+      "description": "Get a shared drawing",
+      "method": "GET",
+      "endpoint": "/{id}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "excalidraw",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://excalidraw.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

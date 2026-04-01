@@ -1,0 +1,40 @@
+{
+  "name": "FactSet AI-Ready Data",
+  "slug": "factset",
+  "description": "Financial data and analytics platform for investment professionals",
+  "category": "finance",
+  "color": "#0F4C81",
+  "website": "https://factset.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.factset.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_prices",
+      "displayName": "Get Prices",
+      "description": "Get security prices",
+      "method": "POST",
+      "endpoint": "/content/factset-prices/v1/prices",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "ids": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "factset",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://factset.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

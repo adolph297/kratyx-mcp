@@ -1,0 +1,58 @@
+{
+  "name": "Cloudinary",
+  "slug": "cloudinary",
+  "description": "Cloud-based image and video management and optimization platform",
+  "category": "storage",
+  "color": "#3448C5",
+  "website": "https://cloudinary.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.cloudinary.com/v1_1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "upload",
+      "displayName": "Upload Asset",
+      "description": "Upload an image or video",
+      "method": "POST",
+      "endpoint": "/{cloudName}/image/upload",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "cloudName": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "list_resources",
+      "displayName": "List Resources",
+      "description": "List uploaded resources",
+      "method": "GET",
+      "endpoint": "/{cloudName}/resources/image",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "cloudName": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "cloudinary",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://cloudinary.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

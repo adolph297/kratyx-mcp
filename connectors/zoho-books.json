@@ -1,0 +1,39 @@
+{
+  "name": "Zoho Books",
+  "slug": "zoho-books",
+  "description": "Online accounting software for small businesses",
+  "category": "finance",
+  "color": "#38A169",
+  "website": "https://zoho.com/books",
+  "authType": "oauth",
+  "baseUrl": "https://books.zoho.com/api/v3",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.zoho.com/oauth/v2/auth",
+    "tokenUrl": "https://accounts.zoho.com/oauth/v2/token",
+    "scopes": [
+      "ZohoBooks.fullaccess.all"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_invoices",
+      "displayName": "List Invoices",
+      "description": "List invoices",
+      "method": "GET",
+      "endpoint": "/invoices",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "zoho-books",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zoho.com/books/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "AWS",
+  "slug": "aws",
+  "description": "Amazon Web Services cloud computing platform",
+  "category": "cloud",
+  "color": "#FF9900",
+  "website": "https://aws.amazon.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.aws.amazon.com",
+  "apiKeyConfig": {
+    "headerName": "X-Api-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_buckets",
+      "displayName": "List S3 Buckets",
+      "description": "List S3 buckets",
+      "method": "GET",
+      "endpoint": "/s3/buckets",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "aws",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://aws.amazon.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

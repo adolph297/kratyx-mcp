@@ -1,0 +1,54 @@
+{
+  "name": "Google Drive",
+  "slug": "google-drive",
+  "description": "Cloud storage and file sharing service",
+  "category": "storage",
+  "color": "#4285F4",
+  "website": "https://drive.google.com",
+  "authType": "oauth",
+  "baseUrl": "https://www.googleapis.com/drive/v3",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+    "tokenUrl": "https://oauth2.googleapis.com/token",
+    "scopes": [
+      "https://www.googleapis.com/auth/drive.readonly"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_files",
+      "displayName": "List Files",
+      "description": "List files in Drive",
+      "method": "GET",
+      "endpoint": "/files",
+      "inputSchema": {}
+    },
+    {
+      "name": "get_file",
+      "displayName": "Get File",
+      "description": "Get file metadata",
+      "method": "GET",
+      "endpoint": "/files/{fileId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fileId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "google-drive",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://drive.google.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

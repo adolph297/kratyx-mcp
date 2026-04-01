@@ -1,0 +1,33 @@
+{
+  "name": "Clarify",
+  "slug": "clarify-data",
+  "description": "Deep data visualization and analysis platform",
+  "category": "analytics",
+  "color": "#0D9488",
+  "website": "https://clarify.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.clarify.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_data",
+      "displayName": "Get Data",
+      "description": "Get timeseries data",
+      "method": "GET",
+      "endpoint": "/data",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "clarify-data",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clarify.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "PostHog",
+  "slug": "posthog",
+  "description": "Open-source product analytics and feature management platform",
+  "category": "analytics",
+  "color": "#1D4AFF",
+  "website": "https://posthog.com",
+  "authType": "api_key",
+  "baseUrl": "https://app.posthog.com/api",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_events",
+      "displayName": "List Events",
+      "description": "List captured events",
+      "method": "GET",
+      "endpoint": "/projects/{projectId}/events",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "posthog",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://posthog.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

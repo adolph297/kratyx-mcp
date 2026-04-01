@@ -1,0 +1,49 @@
+{
+  "name": "Google Compute Engine",
+  "slug": "google-compute",
+  "description": "Google Cloud virtual machine and compute infrastructure",
+  "category": "cloud",
+  "color": "#4285F4",
+  "website": "https://cloud.google.com/compute",
+  "authType": "oauth",
+  "baseUrl": "https://compute.googleapis.com/compute/v1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+    "tokenUrl": "https://oauth2.googleapis.com/token",
+    "scopes": [
+      "https://www.googleapis.com/auth/compute.readonly"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_instances",
+      "displayName": "List Instances",
+      "description": "List VM instances",
+      "method": "GET",
+      "endpoint": "/projects/{project}/zones/{zone}/instances",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "google-compute",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://cloud.google.com/compute/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

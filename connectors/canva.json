@@ -1,0 +1,55 @@
+{
+  "name": "Canva",
+  "slug": "canva",
+  "description": "Online design platform for creating graphics, presentations, and social media content",
+  "category": "productivity",
+  "color": "#00C4CC",
+  "website": "https://canva.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.canva.com/rest/v1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://www.canva.com/api/oauth/authorize",
+    "tokenUrl": "https://www.canva.com/api/oauth/token",
+    "scopes": [
+      "design:content:read",
+      "design:content:write"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_designs",
+      "displayName": "List Designs",
+      "description": "List user designs",
+      "method": "GET",
+      "endpoint": "/designs",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_design",
+      "displayName": "Create Design",
+      "description": "Create a new design",
+      "method": "POST",
+      "endpoint": "/designs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "design_type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "canva",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://canva.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

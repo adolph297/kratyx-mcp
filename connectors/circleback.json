@@ -1,0 +1,33 @@
+{
+  "name": "Circleback",
+  "slug": "circleback",
+  "description": "AI meeting notes and action items automation",
+  "category": "ai",
+  "color": "#6366F1",
+  "website": "https://circleback.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.circleback.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_meetings",
+      "displayName": "List Meetings",
+      "description": "List meeting summaries",
+      "method": "GET",
+      "endpoint": "/meetings",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "circleback",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://circleback.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

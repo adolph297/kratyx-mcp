@@ -1,0 +1,46 @@
+{
+  "name": "Confluence",
+  "slug": "confluence",
+  "description": "Team workspace for knowledge management and collaboration",
+  "category": "productivity",
+  "color": "#172B4D",
+  "website": "https://www.atlassian.com/software/confluence",
+  "authType": "oauth",
+  "baseUrl": "https://api.atlassian.com/ex/confluence",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://auth.atlassian.com/authorize",
+    "tokenUrl": "https://auth.atlassian.com/oauth/token",
+    "scopes": [
+      "read:confluence-content.all"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "search_content",
+      "displayName": "Search Content",
+      "description": "Search Confluence content",
+      "method": "GET",
+      "endpoint": "/wiki/rest/api/content/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "cql": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "confluence",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://www.atlassian.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

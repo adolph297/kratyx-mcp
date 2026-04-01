@@ -1,0 +1,32 @@
+{
+  "name": "Pendo",
+  "slug": "pendo",
+  "description": "Product experience platform for user analytics and in-app guidance",
+  "category": "analytics",
+  "color": "#EC2059",
+  "website": "https://pendo.io",
+  "authType": "api_key",
+  "baseUrl": "https://app.pendo.io/api/v1",
+  "apiKeyConfig": {
+    "headerName": "x-pendo-integration-key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_visitors",
+      "displayName": "Get Visitors",
+      "description": "Get visitor data",
+      "method": "GET",
+      "endpoint": "/visitor",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "pendo",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://pendo.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

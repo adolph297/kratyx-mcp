@@ -1,0 +1,38 @@
+{
+  "name": "ICD-10 Codes",
+  "slug": "icd10",
+  "description": "International Classification of Diseases code lookup",
+  "category": "knowledge",
+  "color": "#0D47A1",
+  "website": "https://icd.who.int",
+  "authType": "none",
+  "baseUrl": "https://clinicaltables.nlm.nih.gov/api",
+  "actions": [
+    {
+      "name": "search_codes",
+      "displayName": "Search Codes",
+      "description": "Search ICD-10 codes",
+      "method": "GET",
+      "endpoint": "/icd10cm/v3/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sf": {
+            "type": "string"
+          },
+          "terms": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "icd10",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://icd.who.int/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

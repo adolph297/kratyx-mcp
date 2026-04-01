@@ -1,0 +1,35 @@
+{
+  "name": "PDF Reader",
+  "slug": "pdf-reader",
+  "description": "Anthropic-powered PDF analysis and data extraction",
+  "category": "ai",
+  "color": "#9D174D",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "analyze_pdf",
+      "displayName": "Analyze PDF",
+      "description": "Extract information from PDF",
+      "method": "POST",
+      "endpoint": "/analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "file_url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "pdf-reader",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

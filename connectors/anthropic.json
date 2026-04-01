@@ -1,0 +1,48 @@
+{
+  "name": "Anthropic",
+  "slug": "anthropic",
+  "description": "AI safety company building Claude AI assistant",
+  "category": "ai",
+  "color": "#D4A574",
+  "website": "https://anthropic.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.anthropic.com/v1",
+  "apiKeyConfig": {
+    "headerName": "x-api-key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "create_message",
+      "displayName": "Create Message",
+      "description": "Create a message with Claude",
+      "method": "POST",
+      "endpoint": "/messages",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string"
+          },
+          "messages": {
+            "type": "array"
+          },
+          "max_tokens": {
+            "type": "number"
+          }
+        }
+      },
+      "headers": {
+        "anthropic-version": "2023-06-01"
+      }
+    }
+  ],
+  "icon": "anthropic",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://anthropic.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

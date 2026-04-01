@@ -1,0 +1,58 @@
+{
+  "name": "Ahrefs",
+  "slug": "ahrefs",
+  "description": "SEO toolset for backlink analysis, keyword research, and site audits",
+  "category": "marketing",
+  "color": "#FF6F20",
+  "website": "https://ahrefs.com",
+  "authType": "api_key",
+  "baseUrl": "https://apiv2.ahrefs.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_backlinks",
+      "displayName": "Get Backlinks",
+      "description": "Get backlinks for a domain",
+      "method": "GET",
+      "endpoint": "/site-explorer/backlinks",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_organic_keywords",
+      "displayName": "Get Organic Keywords",
+      "description": "Get organic keywords",
+      "method": "GET",
+      "endpoint": "/site-explorer/organic-keywords",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "ahrefs",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://ahrefs.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

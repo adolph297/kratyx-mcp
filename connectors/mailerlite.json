@@ -1,0 +1,41 @@
+{
+  "name": "MailerLite",
+  "slug": "mailerlite",
+  "description": "Email marketing platform for creating campaigns and automations",
+  "category": "marketing",
+  "color": "#09C269",
+  "website": "https://mailerlite.com",
+  "authType": "api_key",
+  "baseUrl": "https://connect.mailerlite.com/api",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_subscribers",
+      "displayName": "List Subscribers",
+      "description": "List email subscribers",
+      "method": "GET",
+      "endpoint": "/subscribers",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_campaigns",
+      "displayName": "List Campaigns",
+      "description": "List email campaigns",
+      "method": "GET",
+      "endpoint": "/campaigns",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "mailerlite",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mailerlite.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

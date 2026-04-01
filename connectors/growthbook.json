@@ -1,0 +1,41 @@
+{
+  "name": "Growthbook",
+  "slug": "growthbook",
+  "description": "Open-source feature flagging and A/B testing platform",
+  "category": "devtools",
+  "color": "#023B66",
+  "website": "https://growthbook.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.growthbook.io/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_features",
+      "displayName": "List Features",
+      "description": "List feature flags",
+      "method": "GET",
+      "endpoint": "/features",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_experiments",
+      "displayName": "List Experiments",
+      "description": "List experiments",
+      "method": "GET",
+      "endpoint": "/experiments",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "growthbook",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://growthbook.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

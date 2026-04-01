@@ -1,0 +1,40 @@
+{
+  "name": "Trivago",
+  "slug": "trivago",
+  "description": "Hotel search and price comparison platform",
+  "category": "ecommerce",
+  "color": "#007FAD",
+  "website": "https://trivago.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.trivago.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_hotels",
+      "displayName": "Search Hotels",
+      "description": "Search for hotels",
+      "method": "GET",
+      "endpoint": "/hotels/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "trivago",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://trivago.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

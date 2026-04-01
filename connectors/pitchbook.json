@@ -1,0 +1,40 @@
+{
+  "name": "PitchBook Premium",
+  "slug": "pitchbook",
+  "description": "Private market financial data and analysis platform",
+  "category": "finance",
+  "color": "#003366",
+  "website": "https://pitchbook.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.pitchbook.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_companies",
+      "displayName": "Search Companies",
+      "description": "Search private companies",
+      "method": "GET",
+      "endpoint": "/companies",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "pitchbook",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://pitchbook.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

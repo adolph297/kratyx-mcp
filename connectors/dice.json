@@ -1,0 +1,40 @@
+{
+  "name": "Dice",
+  "slug": "dice",
+  "description": "Tech career and job search platform",
+  "category": "hr",
+  "color": "#EB1700",
+  "website": "https://dice.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.dice.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_jobs",
+      "displayName": "Search Jobs",
+      "description": "Search tech jobs",
+      "method": "GET",
+      "endpoint": "/jobs/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "dice",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://dice.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

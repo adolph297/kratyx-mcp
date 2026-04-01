@@ -1,0 +1,48 @@
+{
+  "name": "Square",
+  "slug": "square",
+  "description": "Payment processing and business management platform",
+  "category": "finance",
+  "color": "#3E4348",
+  "website": "https://squareup.com",
+  "authType": "oauth",
+  "baseUrl": "https://connect.squareup.com/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://connect.squareup.com/oauth2/authorize",
+    "tokenUrl": "https://connect.squareup.com/oauth2/token",
+    "scopes": [
+      "PAYMENTS_READ",
+      "ORDERS_READ"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_payments",
+      "displayName": "List Payments",
+      "description": "List payments",
+      "method": "GET",
+      "endpoint": "/payments",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_orders",
+      "displayName": "List Orders",
+      "description": "List orders",
+      "method": "POST",
+      "endpoint": "/orders/search",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "square",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://squareup.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

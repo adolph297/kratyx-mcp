@@ -1,0 +1,40 @@
+{
+  "name": "Quartr",
+  "slug": "quartr",
+  "description": "Earnings calls and financial events audio platform",
+  "category": "finance",
+  "color": "#000000",
+  "website": "https://quartr.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.quartr.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_events",
+      "displayName": "List Events",
+      "description": "List earnings events",
+      "method": "GET",
+      "endpoint": "/events",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "quartr",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://quartr.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

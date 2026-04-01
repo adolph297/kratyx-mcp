@@ -1,0 +1,40 @@
+{
+  "name": "Atlassian",
+  "slug": "atlassian",
+  "description": "Team collaboration and project management suite (Jira, Confluence, Trello)",
+  "category": "productivity",
+  "color": "#0052CC",
+  "website": "https://atlassian.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.atlassian.com",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://auth.atlassian.com/authorize",
+    "tokenUrl": "https://auth.atlassian.com/oauth/token",
+    "scopes": [
+      "read:me",
+      "read:jira-work"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "get_accessible_resources",
+      "displayName": "Get Resources",
+      "description": "Get accessible resources",
+      "method": "GET",
+      "endpoint": "/oauth/token/accessible-resources",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "atlassian",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://atlassian.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

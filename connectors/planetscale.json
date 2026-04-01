@@ -1,0 +1,39 @@
+{
+  "name": "PlanetScale",
+  "slug": "planetscale",
+  "description": "Serverless MySQL database platform built on Vitess",
+  "category": "data",
+  "color": "#000000",
+  "website": "https://planetscale.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.planetscale.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_databases",
+      "displayName": "List Databases",
+      "description": "List databases",
+      "method": "GET",
+      "endpoint": "/organizations/{org}/databases",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "org": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "planetscale",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://planetscale.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Tableau",
+  "slug": "tableau",
+  "description": "Visual analytics and business intelligence dashboard platform",
+  "category": "analytics",
+  "color": "#E97627",
+  "website": "https://tableau.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-server.online.tableau.com/api/3.19",
+  "apiKeyConfig": {
+    "headerName": "X-Tableau-Auth",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_workbooks",
+      "displayName": "List Workbooks",
+      "description": "List workbooks",
+      "method": "GET",
+      "endpoint": "/sites/{siteId}/workbooks",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "tableau",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://tableau.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

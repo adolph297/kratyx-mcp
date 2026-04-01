@@ -1,0 +1,33 @@
+{
+  "name": "Lumin PDF",
+  "slug": "lumin",
+  "description": "PDF editor and document management platform",
+  "category": "productivity",
+  "color": "#FF6B00",
+  "website": "https://luminpdf.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.luminpdf.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_documents",
+      "displayName": "List Documents",
+      "description": "List PDF documents",
+      "method": "GET",
+      "endpoint": "/documents",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "lumin",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://luminpdf.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

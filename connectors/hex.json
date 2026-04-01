@@ -1,0 +1,33 @@
+{
+  "name": "Hex",
+  "slug": "hex",
+  "description": "Collaborative data science and analytics platform",
+  "category": "analytics",
+  "color": "#F5C244",
+  "website": "https://hex.tech",
+  "authType": "api_key",
+  "baseUrl": "https://app.hex.tech/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_projects",
+      "displayName": "List Projects",
+      "description": "List Hex projects",
+      "method": "GET",
+      "endpoint": "/projects",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "hex",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://hex.tech/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

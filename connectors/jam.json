@@ -1,0 +1,33 @@
+{
+  "name": "Jam",
+  "slug": "jam",
+  "description": "Bug reporting and collaboration tool for development teams",
+  "category": "devtools",
+  "color": "#F97316",
+  "website": "https://jam.dev",
+  "authType": "api_key",
+  "baseUrl": "https://api.jam.dev/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_jams",
+      "displayName": "List Jams",
+      "description": "List bug reports",
+      "method": "GET",
+      "endpoint": "/jams",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "jam",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://jam.dev/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

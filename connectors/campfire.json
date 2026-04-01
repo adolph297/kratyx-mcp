@@ -1,0 +1,50 @@
+{
+  "name": "Campfire",
+  "slug": "campfire",
+  "description": "Team chat and group messaging by 37signals",
+  "category": "communication",
+  "color": "#2BAC76",
+  "website": "https://basecamp.com",
+  "authType": "oauth",
+  "baseUrl": "https://3.basecampapi.com",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://launchpad.37signals.com/authorization/new",
+    "tokenUrl": "https://launchpad.37signals.com/authorization/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_messages",
+      "displayName": "List Messages",
+      "description": "List campfire messages",
+      "method": "GET",
+      "endpoint": "/{accountId}/buckets/{projectId}/chats/{chatId}/lines.json",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "chatId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "campfire",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://basecamp.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

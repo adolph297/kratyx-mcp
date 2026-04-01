@@ -1,0 +1,28 @@
+{
+  "name": "Word",
+  "slug": "word",
+  "description": "Create and edit Word documents (By Anthropic)",
+  "category": "productivity",
+  "color": "#2B579A",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "write_document",
+      "displayName": "Write Document",
+      "description": "Generate docx content",
+      "method": "POST",
+      "endpoint": "/write",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "word",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

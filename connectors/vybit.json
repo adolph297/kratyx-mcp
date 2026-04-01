@@ -1,0 +1,43 @@
+{
+  "name": "Vybit Notifications",
+  "slug": "vybit",
+  "description": "Custom notification sounds and alerts platform",
+  "category": "productivity",
+  "color": "#7C3AED",
+  "website": "https://vybit.net",
+  "authType": "api_key",
+  "baseUrl": "https://api.vybit.net/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "send_notification",
+      "displayName": "Send Notification",
+      "description": "Send a notification",
+      "method": "POST",
+      "endpoint": "/notifications",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "sound": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "vybit",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://vybit.net/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Massive Market Data",
+  "slug": "massive-market-data",
+  "description": "Real-time financial market data and trading indicators",
+  "category": "finance",
+  "color": "#059669",
+  "website": "#",
+  "authType": "api_key",
+  "baseUrl": "https://api.marketdata.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_latest",
+      "displayName": "Get Latest Price",
+      "description": "Get real-time stock price",
+      "method": "GET",
+      "endpoint": "/stocks/{ticker}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "massive-market-data",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

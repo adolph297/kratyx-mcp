@@ -1,0 +1,43 @@
+{
+  "name": "Supermetrics",
+  "slug": "supermetrics",
+  "description": "Marketing data pipeline platform for analytics reporting",
+  "category": "marketing",
+  "color": "#FF5722",
+  "website": "https://supermetrics.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.supermetrics.com/enterprise/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_data",
+      "displayName": "Get Data",
+      "description": "Pull marketing data",
+      "method": "POST",
+      "endpoint": "/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "ds_id": {
+            "type": "string"
+          },
+          "date_range_type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "supermetrics",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://supermetrics.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "ZoomInfo",
+  "slug": "zoominfo",
+  "description": "B2B contact and company data intelligence platform",
+  "category": "crm",
+  "color": "#6933FF",
+  "website": "https://zoominfo.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.zoominfo.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_contacts",
+      "displayName": "Search Contacts",
+      "description": "Search for contacts",
+      "method": "POST",
+      "endpoint": "/search/contact",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "companyName": {
+            "type": "string"
+          },
+          "jobTitle": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "zoominfo",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zoominfo.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

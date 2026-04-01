@@ -1,0 +1,35 @@
+{
+  "name": "Filesystem",
+  "slug": "filesystem",
+  "description": "Local filesystem access for reading and writing files",
+  "category": "devtools",
+  "color": "#6B7280",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "read_file",
+      "displayName": "Read File",
+      "description": "Read file content",
+      "method": "GET",
+      "endpoint": "/file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "filesystem",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

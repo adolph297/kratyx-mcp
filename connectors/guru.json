@@ -1,0 +1,40 @@
+{
+  "name": "Guru",
+  "slug": "guru",
+  "description": "Knowledge management platform for teams",
+  "category": "knowledge",
+  "color": "#24B383",
+  "website": "https://getguru.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.getguru.com/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_cards",
+      "displayName": "Search Cards",
+      "description": "Search knowledge cards",
+      "method": "GET",
+      "endpoint": "/search/cardmgr",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "searchTerms": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "guru",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://getguru.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Clay",
+  "slug": "clay",
+  "description": "Data enrichment and outbound automation platform for go-to-market teams",
+  "category": "crm",
+  "color": "#000000",
+  "website": "https://clay.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.clay.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "enrich_person",
+      "displayName": "Enrich Person",
+      "description": "Enrich person data",
+      "method": "POST",
+      "endpoint": "/enrich/person",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "clay",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clay.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

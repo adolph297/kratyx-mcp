@@ -1,0 +1,55 @@
+{
+  "name": "Mem",
+  "slug": "mem",
+  "description": "AI-powered note-taking and knowledge management app",
+  "category": "ai",
+  "color": "#6C63FF",
+  "website": "https://mem.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.mem.ai/v0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "ApiAccessToken ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "create_mem",
+      "displayName": "Create Mem",
+      "description": "Create a new mem",
+      "method": "POST",
+      "endpoint": "/mems",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "search",
+      "displayName": "Search Mems",
+      "description": "Search mems",
+      "method": "POST",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "mem",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mem.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

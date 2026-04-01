@@ -1,0 +1,40 @@
+{
+  "name": "Dremio Cloud",
+  "slug": "dremio",
+  "description": "Data lakehouse platform for self-service analytics",
+  "category": "data",
+  "color": "#31C197",
+  "website": "https://dremio.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.dremio.cloud/v0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "run_query",
+      "displayName": "Run SQL Query",
+      "description": "Execute a SQL query",
+      "method": "POST",
+      "endpoint": "/sql",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sql": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "dremio",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://dremio.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

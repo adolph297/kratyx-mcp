@@ -1,0 +1,48 @@
+{
+  "name": "Apify",
+  "slug": "apify",
+  "description": "Web scraping and automation platform for extracting data",
+  "category": "data",
+  "color": "#97D700",
+  "website": "https://apify.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.apify.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_actors",
+      "displayName": "List Actors",
+      "description": "List scrapers/actors",
+      "method": "GET",
+      "endpoint": "/acts",
+      "inputSchema": {}
+    },
+    {
+      "name": "run_actor",
+      "displayName": "Run Actor",
+      "description": "Run a scraper actor",
+      "method": "POST",
+      "endpoint": "/acts/{actorId}/runs",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "actorId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "apify",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://apify.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

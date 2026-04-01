@@ -1,0 +1,65 @@
+{
+  "name": "WordPress.com",
+  "slug": "wordpress",
+  "description": "Website building and blogging platform with hosting",
+  "category": "devtools",
+  "color": "#21759B",
+  "website": "https://wordpress.com",
+  "authType": "oauth",
+  "baseUrl": "https://public-api.wordpress.com/rest/v1.1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://public-api.wordpress.com/oauth2/authorize",
+    "tokenUrl": "https://public-api.wordpress.com/oauth2/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_posts",
+      "displayName": "List Posts",
+      "description": "List blog posts",
+      "method": "GET",
+      "endpoint": "/sites/{siteId}/posts",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "create_post",
+      "displayName": "Create Post",
+      "description": "Create a new blog post",
+      "method": "POST",
+      "endpoint": "/sites/{siteId}/posts/new",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "wordpress",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://wordpress.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

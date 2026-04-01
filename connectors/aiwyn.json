@@ -1,0 +1,33 @@
+{
+  "name": "Aiwyn Tax",
+  "slug": "aiwyn",
+  "description": "Automated tax billing and collections platform",
+  "category": "finance",
+  "color": "#0F766E",
+  "website": "https://aiwyn.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.aiwyn.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_bills",
+      "displayName": "List Bills",
+      "description": "List tax bills",
+      "method": "GET",
+      "endpoint": "/bills",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "aiwyn",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://aiwyn.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

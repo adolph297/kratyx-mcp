@@ -1,0 +1,33 @@
+{
+  "name": "Defense.com",
+  "slug": "defense-com",
+  "description": "Cybersecurity threat analysis and management platform",
+  "category": "security",
+  "color": "#EF4444",
+  "website": "https://defense.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.defense.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_threats",
+      "displayName": "Get Threats",
+      "description": "Get detected security threats",
+      "method": "GET",
+      "endpoint": "/threats",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "defense-com",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://defense.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

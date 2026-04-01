@@ -1,0 +1,40 @@
+{
+  "name": "Vibe Prospecting",
+  "slug": "vibe-prospecting",
+  "description": "AI-powered sales prospecting and lead generation tool",
+  "category": "crm",
+  "color": "#7C3AED",
+  "website": "https://vibeprospecting.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.vibeprospecting.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_leads",
+      "displayName": "Search Leads",
+      "description": "Search for leads",
+      "method": "POST",
+      "endpoint": "/leads/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "vibe-prospecting",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://vibeprospecting.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

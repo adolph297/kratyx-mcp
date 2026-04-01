@@ -1,0 +1,33 @@
+{
+  "name": "Intercom",
+  "slug": "intercom",
+  "description": "Customer messaging platform for support and engagement",
+  "category": "crm",
+  "color": "#1F8DED",
+  "website": "https://intercom.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.intercom.io",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_contacts",
+      "displayName": "List Contacts",
+      "description": "List contacts",
+      "method": "GET",
+      "endpoint": "/contacts",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "intercom",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://intercom.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

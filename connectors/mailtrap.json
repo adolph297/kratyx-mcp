@@ -1,0 +1,49 @@
+{
+  "name": "Mailtrap",
+  "slug": "mailtrap",
+  "description": "Email testing and delivery platform for development teams",
+  "category": "devtools",
+  "color": "#22D172",
+  "website": "https://mailtrap.io",
+  "authType": "api_key",
+  "baseUrl": "https://send.api.mailtrap.io/api",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "send_email",
+      "displayName": "Send Email",
+      "description": "Send a test email",
+      "method": "POST",
+      "endpoint": "/send",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "object"
+          },
+          "to": {
+            "type": "array"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "mailtrap",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mailtrap.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

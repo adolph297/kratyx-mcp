@@ -1,0 +1,40 @@
+{
+  "name": "Attio",
+  "slug": "attio",
+  "description": "Modern CRM platform with flexible data models",
+  "category": "crm",
+  "color": "#000000",
+  "website": "https://attio.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.attio.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_records",
+      "displayName": "List Records",
+      "description": "List CRM records",
+      "method": "GET",
+      "endpoint": "/objects/{objectSlug}/records",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "objectSlug": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "attio",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://attio.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Enrichr",
+  "slug": "enrichr",
+  "description": "Gene set enrichment analysis tool (Enrichr MCP Server)",
+  "category": "knowledge",
+  "color": "#10B981",
+  "website": "https://maayanlab.cloud/Enrichr/",
+  "authType": "none",
+  "baseUrl": "https://maayanlab.cloud/Enrichr/addList",
+  "actions": [
+    {
+      "name": "enrich",
+      "displayName": "Enrich List",
+      "description": "Perform gene list enrichment",
+      "method": "POST",
+      "endpoint": "/",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "enrichr",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://maayanlab.cloud/Enrichr//docs",
+  "version": "1.0.0",
+  "status": "active"
+}

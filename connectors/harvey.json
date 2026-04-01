@@ -1,0 +1,43 @@
+{
+  "name": "Harvey",
+  "slug": "harvey",
+  "description": "AI-powered legal research and document analysis platform",
+  "category": "ai",
+  "color": "#1A1A2E",
+  "website": "https://harvey.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.harvey.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "analyze",
+      "displayName": "Analyze Document",
+      "description": "Analyze legal document with AI",
+      "method": "POST",
+      "endpoint": "/analyze",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "harvey",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://harvey.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

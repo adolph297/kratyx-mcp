@@ -1,0 +1,38 @@
+{
+  "name": "Kapture Automation",
+  "slug": "kapture",
+  "description": "Browser automation and screen interaction engine",
+  "category": "devtools",
+  "color": "#8B5CF6",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "click_pixel",
+      "displayName": "Click Pixel",
+      "description": "Click coordinates on screen",
+      "method": "POST",
+      "endpoint": "/click",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number"
+          },
+          "y": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "kapture",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

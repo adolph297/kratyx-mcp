@@ -1,0 +1,40 @@
+{
+  "name": "MT Newswires",
+  "slug": "mt-newswires",
+  "description": "Financial news and market data wire service",
+  "category": "finance",
+  "color": "#1A237E",
+  "website": "https://mtnewswires.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.mtnewswires.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_news",
+      "displayName": "Get News",
+      "description": "Get latest market news",
+      "method": "GET",
+      "endpoint": "/news",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "mt-newswires",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://mtnewswires.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

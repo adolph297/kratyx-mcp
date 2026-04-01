@@ -1,0 +1,43 @@
+{
+  "name": "Segment",
+  "slug": "segment",
+  "description": "Customer data platform for collecting and routing analytics data",
+  "category": "data",
+  "color": "#52BD94",
+  "website": "https://segment.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.segment.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "track",
+      "displayName": "Track Event",
+      "description": "Track an event",
+      "method": "POST",
+      "endpoint": "/track",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "event": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "segment",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://segment.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

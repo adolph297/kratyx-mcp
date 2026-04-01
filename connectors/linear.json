@@ -1,0 +1,47 @@
+{
+  "name": "Linear",
+  "slug": "linear",
+  "description": "Issue tracking tool for modern software teams",
+  "category": "devtools",
+  "color": "#5E6AD2",
+  "website": "https://linear.app",
+  "authType": "oauth",
+  "baseUrl": "https://api.linear.app",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://linear.app/oauth/authorize",
+    "tokenUrl": "https://api.linear.app/oauth/token",
+    "scopes": [
+      "read",
+      "write"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_issues",
+      "displayName": "List Issues",
+      "description": "List issues",
+      "method": "POST",
+      "endpoint": "/graphql",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "linear",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://linear.app/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

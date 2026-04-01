@@ -1,0 +1,43 @@
+{
+  "name": "Customer.io",
+  "slug": "customerio",
+  "description": "Marketing automation platform for targeted messaging campaigns",
+  "category": "marketing",
+  "color": "#F7B500",
+  "website": "https://customer.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.customer.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "identify_customer",
+      "displayName": "Identify Customer",
+      "description": "Create or update a customer",
+      "method": "PUT",
+      "endpoint": "/customers/{customerId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "customerId": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "customerio",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://customer.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Sentry",
+  "slug": "sentry",
+  "description": "Error tracking and performance monitoring platform",
+  "category": "devtools",
+  "color": "#362D59",
+  "website": "https://sentry.io",
+  "authType": "api_key",
+  "baseUrl": "https://sentry.io/api/0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_issues",
+      "displayName": "List Issues",
+      "description": "List project issues",
+      "method": "GET",
+      "endpoint": "/projects/{orgSlug}/{projSlug}/issues/",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "orgSlug": {
+            "type": "string"
+          },
+          "projSlug": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "sentry",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sentry.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

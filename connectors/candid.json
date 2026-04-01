@@ -1,0 +1,39 @@
+{
+  "name": "Candid",
+  "slug": "candid",
+  "description": "Nonprofit data and insights platform",
+  "category": "data",
+  "color": "#003399",
+  "website": "https://candid.org",
+  "authType": "api_key",
+  "baseUrl": "https://api.candid.org/v1",
+  "apiKeyConfig": {
+    "headerName": "Subscription-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search Nonprofits",
+      "description": "Search nonprofit organizations",
+      "method": "GET",
+      "endpoint": "/essentials/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "candid",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://candid.org/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

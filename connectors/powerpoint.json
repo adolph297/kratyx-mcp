@@ -1,0 +1,28 @@
+{
+  "name": "PowerPoint",
+  "slug": "powerpoint",
+  "description": "Create and edit PowerPoint presentations (By Anthropic)",
+  "category": "productivity",
+  "color": "#D24726",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "create_presentation",
+      "displayName": "Create Presentation",
+      "description": "Generate ppt slides",
+      "method": "POST",
+      "endpoint": "/generate",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "powerpoint",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

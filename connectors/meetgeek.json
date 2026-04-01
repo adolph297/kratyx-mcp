@@ -1,0 +1,33 @@
+{
+  "name": "MeetGeek",
+  "slug": "meetgeek",
+  "description": "AI meeting recorder and productivity insights platform",
+  "category": "ai",
+  "color": "#4F46E5",
+  "website": "https://meetgeek.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.meetgeek.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_meetings",
+      "displayName": "List Meetings",
+      "description": "List recorded meetings",
+      "method": "GET",
+      "endpoint": "/meetings",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "meetgeek",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://meetgeek.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

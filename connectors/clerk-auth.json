@@ -1,0 +1,33 @@
+{
+  "name": "Clerk Auth",
+  "slug": "clerk-auth",
+  "description": "Full-stack authentication with user management",
+  "category": "security",
+  "color": "#6C47FF",
+  "website": "https://clerk.dev",
+  "authType": "api_key",
+  "baseUrl": "https://api.clerk.dev/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_users",
+      "displayName": "List Users",
+      "description": "List authenticated users",
+      "method": "GET",
+      "endpoint": "/users",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "clerk-auth",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clerk.dev/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

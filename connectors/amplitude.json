@@ -1,0 +1,33 @@
+{
+  "name": "Amplitude",
+  "slug": "amplitude",
+  "description": "Digital analytics platform for product intelligence",
+  "category": "analytics",
+  "color": "#1C1C5E",
+  "website": "https://amplitude.com",
+  "authType": "api_key",
+  "baseUrl": "https://amplitude.com/api/2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "export_events",
+      "displayName": "Export Events",
+      "description": "Export event data",
+      "method": "GET",
+      "endpoint": "/export",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "amplitude",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://amplitude.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

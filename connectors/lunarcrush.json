@@ -1,0 +1,33 @@
+{
+  "name": "LunarCrush",
+  "slug": "lunarcrush",
+  "description": "Social intelligence platform for crypto and financial markets",
+  "category": "analytics",
+  "color": "#6B21A8",
+  "website": "https://lunarcrush.com",
+  "authType": "api_key",
+  "baseUrl": "https://lunarcrush.com/api4/public",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_coins",
+      "displayName": "Get Coins",
+      "description": "Get cryptocurrency data",
+      "method": "GET",
+      "endpoint": "/coins/list",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "lunarcrush",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://lunarcrush.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

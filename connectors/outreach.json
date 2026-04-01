@@ -1,0 +1,40 @@
+{
+  "name": "Outreach",
+  "slug": "outreach",
+  "description": "Sales engagement platform for pipeline management and automation",
+  "category": "crm",
+  "color": "#5951FF",
+  "website": "https://outreach.io",
+  "authType": "oauth",
+  "baseUrl": "https://api.outreach.io/api/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://api.outreach.io/oauth/authorize",
+    "tokenUrl": "https://api.outreach.io/oauth/token",
+    "scopes": [
+      "prospects.read",
+      "sequences.read"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_prospects",
+      "displayName": "List Prospects",
+      "description": "List sales prospects",
+      "method": "GET",
+      "endpoint": "/prospects",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "outreach",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://outreach.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

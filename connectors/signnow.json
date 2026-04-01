@@ -1,0 +1,37 @@
+{
+  "name": "SignNow",
+  "slug": "signnow",
+  "description": "Electronic signature and document workflow platform",
+  "category": "productivity",
+  "color": "#0065FF",
+  "website": "https://signnow.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.signnow.com",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://app.signnow.com/authorize",
+    "tokenUrl": "https://api.signnow.com/oauth2/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_documents",
+      "displayName": "List Documents",
+      "description": "List documents",
+      "method": "GET",
+      "endpoint": "/user/documentsv2",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "signnow",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://signnow.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

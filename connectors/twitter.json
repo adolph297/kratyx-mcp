@@ -1,0 +1,56 @@
+{
+  "name": "Twitter/X",
+  "slug": "twitter",
+  "description": "Social media platform for microblogging and real-time communication",
+  "category": "social",
+  "color": "#1DA1F2",
+  "website": "https://twitter.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.twitter.com/2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://twitter.com/i/oauth2/authorize",
+    "tokenUrl": "https://api.twitter.com/2/oauth2/token",
+    "scopes": [
+      "tweet.read",
+      "tweet.write",
+      "users.read"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "post_tweet",
+      "displayName": "Post Tweet",
+      "description": "Create a tweet",
+      "method": "POST",
+      "endpoint": "/tweets",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_me",
+      "displayName": "Get My Profile",
+      "description": "Get authenticated user",
+      "method": "GET",
+      "endpoint": "/users/me",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "twitter",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://twitter.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

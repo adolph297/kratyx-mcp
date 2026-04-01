@@ -1,0 +1,33 @@
+{
+  "name": "Udemy Business",
+  "slug": "udemy",
+  "description": "Online learning and training platform for enterprise teams",
+  "category": "knowledge",
+  "color": "#A435F0",
+  "website": "https://udemy.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.udemy.com/api-2.0",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_courses",
+      "displayName": "List Courses",
+      "description": "List available courses",
+      "method": "GET",
+      "endpoint": "/courses",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "udemy",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://udemy.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

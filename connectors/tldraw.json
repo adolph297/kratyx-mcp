@@ -1,0 +1,35 @@
+{
+  "name": "tldraw",
+  "slug": "tldraw",
+  "description": "Open-source collaborative whiteboard and drawing tool",
+  "category": "productivity",
+  "color": "#1D1D1D",
+  "website": "https://tldraw.com",
+  "authType": "none",
+  "baseUrl": "https://api.tldraw.com/v1",
+  "actions": [
+    {
+      "name": "get_room",
+      "displayName": "Get Room",
+      "description": "Get a collaborative room",
+      "method": "GET",
+      "endpoint": "/rooms/{roomId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "tldraw",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://tldraw.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

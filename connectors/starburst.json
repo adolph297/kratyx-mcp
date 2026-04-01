@@ -1,0 +1,40 @@
+{
+  "name": "Starburst",
+  "slug": "starburst",
+  "description": "Analytics platform for distributed data with Trino",
+  "category": "data",
+  "color": "#582C83",
+  "website": "https://starburst.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.starburst.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "Run Query",
+      "description": "Execute an SQL query",
+      "method": "POST",
+      "endpoint": "/statement",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "statement": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "starburst",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://starburst.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

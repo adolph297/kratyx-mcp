@@ -1,0 +1,33 @@
+{
+  "name": "Zscaler",
+  "slug": "zscaler",
+  "description": "Cloud security and zero trust exchange platform",
+  "category": "security",
+  "color": "#2563EB",
+  "website": "https://zscaler.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.zscaler.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_users",
+      "displayName": "List Users",
+      "description": "List secure users",
+      "method": "GET",
+      "endpoint": "/users",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "zscaler",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zscaler.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

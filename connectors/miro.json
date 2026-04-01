@@ -1,0 +1,58 @@
+{
+  "name": "Miro",
+  "slug": "miro",
+  "description": "Online collaborative whiteboarding platform for visual collaboration",
+  "category": "productivity",
+  "color": "#FFD02F",
+  "website": "https://miro.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.miro.com/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://miro.com/oauth/authorize",
+    "tokenUrl": "https://api.miro.com/v1/oauth/token",
+    "scopes": [
+      "boards:read",
+      "boards:write"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_boards",
+      "displayName": "List Boards",
+      "description": "List all boards",
+      "method": "GET",
+      "endpoint": "/boards",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_board",
+      "displayName": "Create Board",
+      "description": "Create a new board",
+      "method": "POST",
+      "endpoint": "/boards",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "miro",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://miro.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

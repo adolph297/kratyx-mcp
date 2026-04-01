@@ -1,0 +1,38 @@
+{
+  "name": "Apple Notes",
+  "slug": "apple-notes",
+  "description": "Read and write notes in Apple Notes",
+  "category": "productivity",
+  "color": "#FBBF24",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "create_note",
+      "displayName": "Create Note",
+      "description": "Add a new note",
+      "method": "POST",
+      "endpoint": "/notes",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "apple-notes",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "SendGrid",
+  "slug": "sendgrid",
+  "description": "Email delivery platform for transactional and marketing emails",
+  "category": "marketing",
+  "color": "#1A82E2",
+  "website": "https://sendgrid.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.sendgrid.com/v3",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "send_email",
+      "displayName": "Send Email",
+      "description": "Send an email",
+      "method": "POST",
+      "endpoint": "/mail/send",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "personalizations": {
+            "type": "array"
+          },
+          "from": {
+            "type": "object"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "content": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "sendgrid",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sendgrid.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

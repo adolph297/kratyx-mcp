@@ -1,0 +1,40 @@
+{
+  "name": "GitLab",
+  "slug": "gitlab",
+  "description": "DevOps platform for source code management and CI/CD",
+  "category": "devtools",
+  "color": "#FC6D26",
+  "website": "https://gitlab.com",
+  "authType": "oauth",
+  "baseUrl": "https://gitlab.com/api/v4",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://gitlab.com/oauth/authorize",
+    "tokenUrl": "https://gitlab.com/oauth/token",
+    "scopes": [
+      "read_user",
+      "api"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_projects",
+      "displayName": "List Projects",
+      "description": "List projects",
+      "method": "GET",
+      "endpoint": "/projects",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "gitlab",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://gitlab.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

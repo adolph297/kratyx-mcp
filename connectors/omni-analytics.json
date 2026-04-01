@@ -1,0 +1,40 @@
+{
+  "name": "Omni Analytics",
+  "slug": "omni-analytics",
+  "description": "Enterprise analytics and BI platform",
+  "category": "analytics",
+  "color": "#1E3A8A",
+  "website": "https://omni.co",
+  "authType": "api_key",
+  "baseUrl": "https://api.omni.co/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "run_query",
+      "displayName": "Run Query",
+      "description": "Run analytics query",
+      "method": "POST",
+      "endpoint": "/queries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "omni-analytics",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://omni.co/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

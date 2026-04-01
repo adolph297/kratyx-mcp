@@ -1,0 +1,33 @@
+{
+  "name": "Miggo",
+  "slug": "miggo",
+  "description": "Public API integration for secure cloud networks",
+  "category": "security",
+  "color": "#3B82F6",
+  "website": "#",
+  "authType": "api_key",
+  "baseUrl": "https://api.miggo.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_assets",
+      "displayName": "List Assets",
+      "description": "List cloud assets",
+      "method": "GET",
+      "endpoint": "/assets",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "miggo",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

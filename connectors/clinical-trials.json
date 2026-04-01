@@ -1,0 +1,38 @@
+{
+  "name": "Clinical Trials",
+  "slug": "clinical-trials",
+  "description": "Database of clinical research studies from ClinicalTrials.gov",
+  "category": "knowledge",
+  "color": "#1B5E20",
+  "website": "https://clinicaltrials.gov",
+  "authType": "none",
+  "baseUrl": "https://clinicaltrials.gov/api/v2",
+  "actions": [
+    {
+      "name": "search_studies",
+      "displayName": "Search Studies",
+      "description": "Search clinical trials",
+      "method": "GET",
+      "endpoint": "/studies",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query.term": {
+            "type": "string"
+          },
+          "pageSize": {
+            "type": "number"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "clinical-trials",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clinicaltrials.gov/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

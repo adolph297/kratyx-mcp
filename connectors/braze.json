@@ -1,0 +1,43 @@
+{
+  "name": "Braze",
+  "slug": "braze",
+  "description": "Customer engagement platform for marketing automation",
+  "category": "marketing",
+  "color": "#F7931E",
+  "website": "https://braze.com",
+  "authType": "api_key",
+  "baseUrl": "https://rest.iad-01.braze.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "track_users",
+      "displayName": "Track Users",
+      "description": "Track user attributes and events",
+      "method": "POST",
+      "endpoint": "/users/track",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "type": "array"
+          },
+          "events": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "braze",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://braze.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

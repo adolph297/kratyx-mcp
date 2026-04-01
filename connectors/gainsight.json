@@ -1,0 +1,32 @@
+{
+  "name": "Gainsight",
+  "slug": "gainsight",
+  "description": "Customer success platform with AI-powered insights",
+  "category": "crm",
+  "color": "#FF5C35",
+  "website": "https://gainsight.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.gainsight.com/v1",
+  "apiKeyConfig": {
+    "headerName": "accessKey",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_companies",
+      "displayName": "List Companies",
+      "description": "List customer companies",
+      "method": "GET",
+      "endpoint": "/companies",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "gainsight",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://gainsight.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

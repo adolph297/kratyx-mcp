@@ -1,0 +1,33 @@
+{
+  "name": "Sprouts Data",
+  "slug": "sprouts",
+  "description": "Intelligent data discovery and business insights",
+  "category": "analytics",
+  "color": "#84CC16",
+  "website": "#",
+  "authType": "api_key",
+  "baseUrl": "https://api.sprouts.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_insights",
+      "displayName": "List Insights",
+      "description": "List generated insights",
+      "method": "GET",
+      "endpoint": "/insights",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "sprouts",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

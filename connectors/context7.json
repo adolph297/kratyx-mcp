@@ -1,0 +1,40 @@
+{
+  "name": "Context7",
+  "slug": "context7",
+  "description": "AI context management and retrieval platform for development",
+  "category": "ai",
+  "color": "#2563EB",
+  "website": "https://context7.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.context7.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "search_context",
+      "displayName": "Search Context",
+      "description": "Search for development context",
+      "method": "POST",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "context7",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://context7.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

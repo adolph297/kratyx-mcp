@@ -1,0 +1,79 @@
+{
+  "name": "Gmail",
+  "slug": "gmail",
+  "description": "Send, read, and manage emails with Gmail's powerful email platform",
+  "category": "communication",
+  "icon": "gmail",
+  "color": "#EA4335",
+  "website": "https://gmail.com",
+  "authType": "oauth",
+  "baseUrl": "https://gmail.googleapis.com/gmail/v1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+    "tokenUrl": "https://oauth2.googleapis.com/token",
+    "scopes": ["https://www.googleapis.com/auth/gmail.readonly", "https://www.googleapis.com/auth/gmail.send", "https://www.googleapis.com/auth/gmail.modify"],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_messages",
+      "displayName": "List Messages",
+      "description": "List messages in the user's mailbox",
+      "method": "GET",
+      "endpoint": "/users/me/messages",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "maxResults": { "type": "number", "default": 10 },
+          "q": { "type": "string", "description": "Search query" }
+        }
+      }
+    },
+    {
+      "name": "get_message",
+      "displayName": "Get Message",
+      "description": "Get a specific email message by ID",
+      "method": "GET",
+      "endpoint": "/users/me/messages/{messageId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "messageId": { "type": "string", "required": true }
+        }
+      }
+    },
+    {
+      "name": "send_email",
+      "displayName": "Send Email",
+      "description": "Send an email message",
+      "method": "POST",
+      "endpoint": "/users/me/messages/send",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "to": { "type": "string", "required": true },
+          "subject": { "type": "string", "required": true },
+          "body": { "type": "string", "required": true }
+        }
+      }
+    },
+    {
+      "name": "list_labels",
+      "displayName": "List Labels",
+      "description": "List all labels in the mailbox",
+      "method": "GET",
+      "endpoint": "/users/me/labels",
+      "inputSchema": {}
+    }
+  ],
+  "webhookSupport": true,
+  "rateLimits": {
+    "requestsPerMinute": 250
+  },
+  "documentation": "https://developers.google.com/gmail/api",
+  "version": "1.0.0",
+  "status": "active"
+}

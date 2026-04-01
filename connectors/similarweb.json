@@ -1,0 +1,39 @@
+{
+  "name": "Similarweb",
+  "slug": "similarweb",
+  "description": "Digital intelligence platform for website traffic and competitive analysis",
+  "category": "analytics",
+  "color": "#0066FF",
+  "website": "https://similarweb.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.similarweb.com/v1",
+  "apiKeyConfig": {
+    "headerName": "api_key",
+    "location": "query"
+  },
+  "actions": [
+    {
+      "name": "get_traffic",
+      "displayName": "Get Website Traffic",
+      "description": "Get website traffic data",
+      "method": "GET",
+      "endpoint": "/website/{domain}/total-traffic-and-engagement/visits",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "similarweb",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://similarweb.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

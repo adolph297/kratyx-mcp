@@ -1,0 +1,33 @@
+{
+  "name": "Krisp",
+  "slug": "krisp",
+  "description": "AI noise cancellation and meeting assistant platform",
+  "category": "ai",
+  "color": "#7C3AED",
+  "website": "https://krisp.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.krisp.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_meetings",
+      "displayName": "List Meetings",
+      "description": "List recorded meetings",
+      "method": "GET",
+      "endpoint": "/meetings",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "krisp",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://krisp.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

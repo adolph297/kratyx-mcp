@@ -1,0 +1,49 @@
+{
+  "name": "Intuit QuickBooks",
+  "slug": "quickbooks",
+  "description": "Accounting software for small business financials",
+  "category": "finance",
+  "color": "#2CA01C",
+  "website": "https://quickbooks.intuit.com",
+  "authType": "oauth",
+  "baseUrl": "https://quickbooks.api.intuit.com/v3",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://appcenter.intuit.com/connect/oauth2",
+    "tokenUrl": "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer",
+    "scopes": [
+      "com.intuit.quickbooks.accounting"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "Run Query",
+      "description": "Run an accounting query",
+      "method": "GET",
+      "endpoint": "/company/{companyId}/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "companyId": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "quickbooks",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://quickbooks.intuit.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

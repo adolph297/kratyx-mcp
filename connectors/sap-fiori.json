@@ -1,0 +1,33 @@
+{
+  "name": "SAP Fiori",
+  "slug": "sap-fiori",
+  "description": "User experience platform for SAP applications",
+  "category": "ecommerce",
+  "color": "#008FD3",
+  "website": "https://sap.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.sap.com/fiori",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_apps",
+      "displayName": "List Apps",
+      "description": "List fiori applications",
+      "method": "GET",
+      "endpoint": "/apps",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "sap-fiori",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://sap.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

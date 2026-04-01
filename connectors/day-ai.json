@@ -1,0 +1,33 @@
+{
+  "name": "Day AI",
+  "slug": "day-ai",
+  "description": "AI relationship management and CRM platform",
+  "category": "ai",
+  "color": "#000000",
+  "website": "https://day.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.day.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_contacts",
+      "displayName": "List Contacts",
+      "description": "List relationship contacts",
+      "method": "GET",
+      "endpoint": "/contacts",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "day-ai",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://day.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

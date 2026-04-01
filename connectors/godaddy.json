@@ -1,0 +1,48 @@
+{
+  "name": "GoDaddy",
+  "slug": "godaddy",
+  "description": "Domain registration and web hosting services",
+  "category": "cloud",
+  "color": "#1BDBDB",
+  "website": "https://godaddy.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.godaddy.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "sso-key ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_domains",
+      "displayName": "List Domains",
+      "description": "List registered domains",
+      "method": "GET",
+      "endpoint": "/domains",
+      "inputSchema": {}
+    },
+    {
+      "name": "check_availability",
+      "displayName": "Check Availability",
+      "description": "Check domain availability",
+      "method": "GET",
+      "endpoint": "/domains/available",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "godaddy",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://godaddy.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

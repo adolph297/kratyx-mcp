@@ -1,0 +1,40 @@
+{
+  "name": "Port IO",
+  "slug": "port-io",
+  "description": "Internal developer portal and service catalog platform",
+  "category": "devtools",
+  "color": "#6D59F0",
+  "website": "https://getport.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.getport.io/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_entities",
+      "displayName": "List Entities",
+      "description": "List service entities",
+      "method": "GET",
+      "endpoint": "/blueprints/{blueprint}/entities",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "blueprint": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "port-io",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://getport.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

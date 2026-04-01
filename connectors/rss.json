@@ -1,0 +1,35 @@
+{
+  "name": "RSS Feed",
+  "slug": "rss",
+  "description": "Universal RSS feed reader",
+  "category": "data",
+  "color": "#F99000",
+  "website": "",
+  "authType": "none",
+  "baseUrl": "",
+  "actions": [
+    {
+      "name": "read_feed",
+      "displayName": "Read Feed",
+      "description": "Read an RSS feed",
+      "method": "GET",
+      "endpoint": "/{feedUrl}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "feedUrl": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "rss",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://rss.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

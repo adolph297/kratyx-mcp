@@ -1,0 +1,49 @@
+{
+  "name": "BigQuery",
+  "slug": "bigquery",
+  "description": "Google Cloud's serverless data warehouse",
+  "category": "data",
+  "color": "#4285F4",
+  "website": "https://cloud.google.com/bigquery",
+  "authType": "oauth",
+  "baseUrl": "https://bigquery.googleapis.com/bigquery/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+    "tokenUrl": "https://oauth2.googleapis.com/token",
+    "scopes": [
+      "https://www.googleapis.com/auth/bigquery"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "Run Query",
+      "description": "Run a BigQuery query",
+      "method": "POST",
+      "endpoint": "/projects/{projectId}/queries",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "bigquery",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://cloud.google.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

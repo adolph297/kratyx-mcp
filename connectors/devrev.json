@@ -1,0 +1,33 @@
+{
+  "name": "DevRev",
+  "slug": "devrev",
+  "description": "Developer-first CRM platform connecting product and customer teams",
+  "category": "crm",
+  "color": "#0052FF",
+  "website": "https://devrev.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.devrev.ai",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_works",
+      "displayName": "List Works",
+      "description": "List work items",
+      "method": "GET",
+      "endpoint": "/works.list",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "devrev",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://devrev.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

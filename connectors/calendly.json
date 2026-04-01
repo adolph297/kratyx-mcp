@@ -1,0 +1,45 @@
+{
+  "name": "Calendly",
+  "slug": "calendly",
+  "description": "Scheduling automation platform for meetings and appointments",
+  "category": "productivity",
+  "color": "#006BFF",
+  "website": "https://calendly.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.calendly.com",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://auth.calendly.com/oauth/authorize",
+    "tokenUrl": "https://auth.calendly.com/oauth/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_events",
+      "displayName": "List Events",
+      "description": "List scheduled events",
+      "method": "GET",
+      "endpoint": "/scheduled_events",
+      "inputSchema": {}
+    },
+    {
+      "name": "get_user",
+      "displayName": "Get User",
+      "description": "Get current user",
+      "method": "GET",
+      "endpoint": "/users/me",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "calendly",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://calendly.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "n8n",
+  "slug": "n8n",
+  "description": "Workflow automation tool for connecting apps and automating tasks",
+  "category": "automation",
+  "color": "#EA4B71",
+  "website": "https://n8n.io",
+  "authType": "api_key",
+  "baseUrl": "https://api.n8n.io/v1",
+  "apiKeyConfig": {
+    "headerName": "X-N8N-API-KEY",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_workflows",
+      "displayName": "List Workflows",
+      "description": "List all workflows",
+      "method": "GET",
+      "endpoint": "/workflows",
+      "inputSchema": {}
+    },
+    {
+      "name": "execute_workflow",
+      "displayName": "Execute Workflow",
+      "description": "Execute a workflow",
+      "method": "POST",
+      "endpoint": "/workflows/{workflowId}/execute",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "workflowId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "n8n",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://n8n.io/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

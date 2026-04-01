@@ -1,0 +1,33 @@
+{
+  "name": "Close",
+  "slug": "close",
+  "description": "CRM platform built for inside sales teams",
+  "category": "crm",
+  "color": "#3A4E5F",
+  "website": "https://close.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.close.com/api/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_leads",
+      "displayName": "List Leads",
+      "description": "List sales leads",
+      "method": "GET",
+      "endpoint": "/lead",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "close",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://close.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Learning Commons",
+  "slug": "learning-commons",
+  "description": "Academic knowledge management and resource sharing",
+  "category": "knowledge",
+  "color": "#6366F1",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "get_resource",
+      "displayName": "Get Resource",
+      "description": "Retrieve academic record",
+      "method": "GET",
+      "endpoint": "/records/{id}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "learning-commons",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

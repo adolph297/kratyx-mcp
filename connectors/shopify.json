@@ -1,0 +1,48 @@
+{
+  "name": "Shopify",
+  "slug": "shopify",
+  "description": "E-commerce platform for online stores and retail",
+  "category": "ecommerce",
+  "color": "#7AB55C",
+  "website": "https://shopify.com",
+  "authType": "oauth",
+  "baseUrl": "https://admin.shopify.com/api/2024-01",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.shopify.com/oauth/authorize",
+    "tokenUrl": "https://accounts.shopify.com/oauth/access_token",
+    "scopes": [
+      "read_products",
+      "write_products"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_products",
+      "displayName": "List Products",
+      "description": "List all products",
+      "method": "GET",
+      "endpoint": "/products.json",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_orders",
+      "displayName": "List Orders",
+      "description": "List all orders",
+      "method": "GET",
+      "endpoint": "/orders.json",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "shopify",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://shopify.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

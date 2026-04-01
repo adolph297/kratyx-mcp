@@ -1,0 +1,51 @@
+{
+  "name": "Zendesk",
+  "slug": "zendesk",
+  "description": "Customer service and engagement platform",
+  "category": "crm",
+  "color": "#03363D",
+  "website": "https://zendesk.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-domain.zendesk.com/api/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_tickets",
+      "displayName": "List Tickets",
+      "description": "List support tickets",
+      "method": "GET",
+      "endpoint": "/tickets.json",
+      "inputSchema": {}
+    },
+    {
+      "name": "create_ticket",
+      "displayName": "Create Ticket",
+      "description": "Create a ticket",
+      "method": "POST",
+      "endpoint": "/tickets.json",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "subject": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "zendesk",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zendesk.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

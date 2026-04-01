@@ -1,0 +1,35 @@
+{
+  "name": "Play Sheet Music",
+  "slug": "play-sheet-music",
+  "description": "Digital sheet music player and music notation renderer",
+  "category": "productivity",
+  "color": "#E91E63",
+  "website": "https://playsheetmusic.com",
+  "authType": "none",
+  "baseUrl": "https://api.playsheetmusic.com/v1",
+  "actions": [
+    {
+      "name": "render_score",
+      "displayName": "Render Score",
+      "description": "Render sheet music",
+      "method": "POST",
+      "endpoint": "/render",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "musicxml": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "play-sheet-music",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://playsheetmusic.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

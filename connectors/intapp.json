@@ -1,0 +1,33 @@
+{
+  "name": "Intapp Celeste",
+  "slug": "intapp",
+  "description": "Enterprise automation platform for professional services",
+  "category": "crm",
+  "color": "#1E293B",
+  "website": "https://intapp.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.intapp.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_clients",
+      "displayName": "List Clients",
+      "description": "List professional clients",
+      "method": "GET",
+      "endpoint": "/clients",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "intapp",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://intapp.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

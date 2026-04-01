@@ -1,0 +1,33 @@
+{
+  "name": "Medidata",
+  "slug": "medidata",
+  "description": "Clinical trial data and management platform",
+  "category": "knowledge",
+  "color": "#22C55E",
+  "website": "https://medidata.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.medidata.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_studies",
+      "displayName": "List Studies",
+      "description": "List clinical studies",
+      "method": "GET",
+      "endpoint": "/studies",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "medidata",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://medidata.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

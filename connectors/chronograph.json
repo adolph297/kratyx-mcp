@@ -1,0 +1,33 @@
+{
+  "name": "Chronograph",
+  "slug": "chronograph",
+  "description": "Private market portfolio management and analytics",
+  "category": "finance",
+  "color": "#1E3A5F",
+  "website": "https://chronograph.pe",
+  "authType": "api_key",
+  "baseUrl": "https://api.chronograph.pe/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_funds",
+      "displayName": "List Funds",
+      "description": "List investment funds",
+      "method": "GET",
+      "endpoint": "/funds",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "chronograph",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://chronograph.pe/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

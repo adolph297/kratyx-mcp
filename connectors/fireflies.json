@@ -1,0 +1,40 @@
+{
+  "name": "Fireflies",
+  "slug": "fireflies",
+  "description": "AI meeting assistant for transcription, notes, and action items",
+  "category": "ai",
+  "color": "#6C47FF",
+  "website": "https://fireflies.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.fireflies.ai",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_transcripts",
+      "displayName": "List Transcripts",
+      "description": "List meeting transcripts",
+      "method": "POST",
+      "endpoint": "/graphql",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "fireflies",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://fireflies.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

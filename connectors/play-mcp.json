@@ -1,0 +1,28 @@
+{
+  "name": "PlayMCP",
+  "slug": "play-mcp",
+  "description": "Experiment and play with MCP tools in a sandbox",
+  "category": "devtools",
+  "color": "#F43F5E",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "play",
+      "displayName": "Play",
+      "description": "Start a sandbox session",
+      "method": "POST",
+      "endpoint": "/play",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "play-mcp",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "",
+  "version": "1.0.0",
+  "status": "active"
+}

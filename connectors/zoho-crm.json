@@ -1,0 +1,46 @@
+{
+  "name": "Zoho CRM",
+  "slug": "zoho-crm",
+  "description": "Customer relationship management platform by Zoho",
+  "category": "crm",
+  "color": "#E42527",
+  "website": "https://zoho.com/crm",
+  "authType": "oauth",
+  "baseUrl": "https://www.zohoapis.com/crm/v5",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://accounts.zoho.com/oauth/v2/auth",
+    "tokenUrl": "https://accounts.zoho.com/oauth/v2/token",
+    "scopes": [
+      "ZohoCRM.modules.ALL"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_records",
+      "displayName": "List Records",
+      "description": "List CRM records",
+      "method": "GET",
+      "endpoint": "/{module}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "module": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "zoho-crm",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://zoho.com/crm/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

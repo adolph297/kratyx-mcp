@@ -1,0 +1,32 @@
+{
+  "name": "PanOS MCP",
+  "slug": "pan-os",
+  "description": "Palo Alto Networks Next-Generation Firewall management",
+  "category": "security",
+  "color": "#F97316",
+  "website": "https://paloaltonetworks.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.paloaltonetworks.com",
+  "apiKeyConfig": {
+    "headerName": "X-PAN-KEY",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_rules",
+      "displayName": "List Rules",
+      "description": "Get security policy rules",
+      "method": "GET",
+      "endpoint": "/rules",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "pan-os",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://paloaltonetworks.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

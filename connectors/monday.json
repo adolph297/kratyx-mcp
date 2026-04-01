@@ -1,0 +1,39 @@
+{
+  "name": "Monday.com",
+  "slug": "monday",
+  "description": "Work OS platform for team management and workflows",
+  "category": "productivity",
+  "color": "#FF3D57",
+  "website": "https://monday.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.monday.com/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "GraphQL Query",
+      "description": "Execute a GraphQL query",
+      "method": "POST",
+      "endpoint": "/",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "monday",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://monday.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

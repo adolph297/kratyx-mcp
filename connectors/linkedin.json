@@ -1,0 +1,40 @@
+{
+  "name": "LinkedIn",
+  "slug": "linkedin",
+  "description": "Professional networking platform for career and business",
+  "category": "social",
+  "color": "#0A66C2",
+  "website": "https://linkedin.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.linkedin.com/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://www.linkedin.com/oauth/v2/authorization",
+    "tokenUrl": "https://www.linkedin.com/oauth/v2/accessToken",
+    "scopes": [
+      "r_liteprofile",
+      "r_emailaddress"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "get_profile",
+      "displayName": "Get Profile",
+      "description": "Get user profile",
+      "method": "GET",
+      "endpoint": "/me",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "linkedin",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://linkedin.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

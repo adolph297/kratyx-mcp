@@ -1,0 +1,33 @@
+{
+  "name": "Metaview",
+  "slug": "metaview",
+  "description": "AI-powered interview intelligence and note-taking",
+  "category": "hr",
+  "color": "#6D28D9",
+  "website": "https://metaview.ai",
+  "authType": "api_key",
+  "baseUrl": "https://api.metaview.ai/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_interviews",
+      "displayName": "List Interviews",
+      "description": "List interview notes",
+      "method": "GET",
+      "endpoint": "/interviews",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "metaview",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://metaview.ai/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

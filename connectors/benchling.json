@@ -1,0 +1,33 @@
+{
+  "name": "Benchling",
+  "slug": "benchling",
+  "description": "Cloud platform for life science R&D data management",
+  "category": "knowledge",
+  "color": "#2563EB",
+  "website": "https://benchling.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-tenant.benchling.com/api/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_entries",
+      "displayName": "List Entries",
+      "description": "List notebook entries",
+      "method": "GET",
+      "endpoint": "/entries",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "benchling",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://benchling.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

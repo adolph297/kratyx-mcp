@@ -1,0 +1,86 @@
+{
+  "name": "Notion",
+  "slug": "notion",
+  "description": "All-in-one workspace for notes, tasks, wikis, and databases",
+  "category": "productivity",
+  "icon": "notion",
+  "color": "#000000",
+  "website": "https://notion.so",
+  "authType": "oauth",
+  "baseUrl": "https://api.notion.com/v1",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://api.notion.com/v1/oauth/authorize",
+    "tokenUrl": "https://api.notion.com/v1/oauth/token",
+    "scopes": [],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "search",
+      "displayName": "Search",
+      "description": "Search for pages and databases",
+      "method": "POST",
+      "endpoint": "/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": { "type": "string" }
+        }
+      },
+      "headers": { "Notion-Version": "2022-06-28" }
+    },
+    {
+      "name": "get_page",
+      "displayName": "Get Page",
+      "description": "Retrieve a page by ID",
+      "method": "GET",
+      "endpoint": "/pages/{pageId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "pageId": { "type": "string", "required": true }
+        }
+      },
+      "headers": { "Notion-Version": "2022-06-28" }
+    },
+    {
+      "name": "create_page",
+      "displayName": "Create Page",
+      "description": "Create a new page",
+      "method": "POST",
+      "endpoint": "/pages",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "parent": { "type": "object", "required": true },
+          "properties": { "type": "object", "required": true }
+        }
+      },
+      "headers": { "Notion-Version": "2022-06-28" }
+    },
+    {
+      "name": "query_database",
+      "displayName": "Query Database",
+      "description": "Query a Notion database",
+      "method": "POST",
+      "endpoint": "/databases/{databaseId}/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "databaseId": { "type": "string", "required": true },
+          "filter": { "type": "object" },
+          "sorts": { "type": "array" }
+        }
+      },
+      "headers": { "Notion-Version": "2022-06-28" }
+    }
+  ],
+  "webhookSupport": false,
+  "rateLimits": { "requestsPerMinute": 300 },
+  "documentation": "https://developers.notion.com/",
+  "version": "1.0.0",
+  "status": "active"
+}

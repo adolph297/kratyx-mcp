@@ -1,0 +1,39 @@
+{
+  "name": "CData Connect AI",
+  "slug": "cdata",
+  "description": "Universal data connectivity and API integration platform",
+  "category": "data",
+  "color": "#00AEE8",
+  "website": "https://cdata.com",
+  "authType": "api_key",
+  "baseUrl": "https://cloud.cdata.com/api",
+  "apiKeyConfig": {
+    "headerName": "x-cdata-authtoken",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "query",
+      "displayName": "Query Data",
+      "description": "Query connected data sources",
+      "method": "POST",
+      "endpoint": "/query",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "cdata",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://cdata.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Freshdesk",
+  "slug": "freshdesk",
+  "description": "Customer support software for helpdesk management",
+  "category": "crm",
+  "color": "#25c16f",
+  "website": "https://freshdesk.com",
+  "authType": "api_key",
+  "baseUrl": "https://your-domain.freshdesk.com/api/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Basic ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_tickets",
+      "displayName": "List Tickets",
+      "description": "List tickets",
+      "method": "GET",
+      "endpoint": "/tickets",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "freshdesk",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://freshdesk.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

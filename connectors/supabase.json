@@ -1,0 +1,33 @@
+{
+  "name": "Supabase",
+  "slug": "supabase",
+  "description": "Open-source Firebase alternative with Postgres database",
+  "category": "devtools",
+  "color": "#3ECF8E",
+  "website": "https://supabase.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.supabase.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_projects",
+      "displayName": "List Projects",
+      "description": "List all projects",
+      "method": "GET",
+      "endpoint": "/projects",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "supabase",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://supabase.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

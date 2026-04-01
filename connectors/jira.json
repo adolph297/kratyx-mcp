@@ -1,0 +1,65 @@
+{
+  "name": "Jira",
+  "slug": "jira",
+  "description": "Issue tracking and project management for agile teams",
+  "category": "productivity",
+  "color": "#0052CC",
+  "website": "https://www.atlassian.com/software/jira",
+  "authType": "oauth",
+  "baseUrl": "https://api.atlassian.com/ex/jira",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://auth.atlassian.com/authorize",
+    "tokenUrl": "https://auth.atlassian.com/oauth/token",
+    "scopes": [
+      "read:jira-work",
+      "write:jira-work"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_issues",
+      "displayName": "List Issues",
+      "description": "Search issues with JQL",
+      "method": "POST",
+      "endpoint": "/rest/api/3/search",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "jql": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "create_issue",
+      "displayName": "Create Issue",
+      "description": "Create an issue",
+      "method": "POST",
+      "endpoint": "/rest/api/3/issue",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "jira",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://www.atlassian.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

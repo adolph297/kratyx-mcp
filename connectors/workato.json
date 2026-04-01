@@ -1,0 +1,33 @@
+{
+  "name": "Workato",
+  "slug": "workato",
+  "description": "Enterprise automation platform for IT and business workflows",
+  "category": "automation",
+  "color": "#00B388",
+  "website": "https://workato.com",
+  "authType": "api_key",
+  "baseUrl": "https://www.workato.com/api",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_recipes",
+      "displayName": "List Recipes",
+      "description": "List automation recipes",
+      "method": "GET",
+      "endpoint": "/recipes",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "workato",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://workato.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

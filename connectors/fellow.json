@@ -1,0 +1,33 @@
+{
+  "name": "Fellow.ai",
+  "slug": "fellow",
+  "description": "AI meeting management platform for agendas and action items",
+  "category": "productivity",
+  "color": "#FF6B2B",
+  "website": "https://fellow.app",
+  "authType": "api_key",
+  "baseUrl": "https://api.fellow.app/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_meetings",
+      "displayName": "List Meetings",
+      "description": "List meetings",
+      "method": "GET",
+      "endpoint": "/meetings",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "fellow",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://fellow.app/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

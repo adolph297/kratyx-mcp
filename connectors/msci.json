@@ -1,0 +1,40 @@
+{
+  "name": "MSCI",
+  "slug": "msci",
+  "description": "Market analytics and ESG ratings for institutional investors",
+  "category": "finance",
+  "color": "#003B8E",
+  "website": "https://msci.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.msci.com/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "get_index",
+      "displayName": "Get Index Data",
+      "description": "Get MSCI index data",
+      "method": "GET",
+      "endpoint": "/indexes/{indexId}",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "indexId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "msci",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://msci.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "ClickUp",
+  "slug": "clickup",
+  "description": "All-in-one project management and productivity platform",
+  "category": "productivity",
+  "color": "#7B68EE",
+  "website": "https://clickup.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.clickup.com/api/v2",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_spaces",
+      "displayName": "List Spaces",
+      "description": "List spaces in a team",
+      "method": "GET",
+      "endpoint": "/team/{teamId}/space",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "teamId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "clickup",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://clickup.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Webflow",
+  "slug": "webflow",
+  "description": "Visual web development platform for building responsive websites",
+  "category": "devtools",
+  "color": "#4353FF",
+  "website": "https://webflow.com",
+  "authType": "oauth",
+  "baseUrl": "https://api.webflow.com/v2",
+  "authConfig": {
+    "clientId": "",
+    "clientSecret": "",
+    "authUrl": "https://webflow.com/oauth/authorize",
+    "tokenUrl": "https://api.webflow.com/oauth/access_token",
+    "scopes": [
+      "sites:read",
+      "sites:write"
+    ],
+    "responseType": "code",
+    "grantType": "authorization_code"
+  },
+  "actions": [
+    {
+      "name": "list_sites",
+      "displayName": "List Sites",
+      "description": "List all sites",
+      "method": "GET",
+      "endpoint": "/sites",
+      "inputSchema": {}
+    },
+    {
+      "name": "list_collections",
+      "displayName": "List Collections",
+      "description": "List CMS collections",
+      "method": "GET",
+      "endpoint": "/sites/{siteId}/collections",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  ],
+  "icon": "webflow",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://webflow.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Granted",
+  "slug": "granted",
+  "description": "AWS credential management and access control tool",
+  "category": "security",
+  "color": "#F59E0B",
+  "website": "https://granted.dev",
+  "authType": "api_key",
+  "baseUrl": "https://api.granted.dev/v1",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_roles",
+      "displayName": "List Roles",
+      "description": "List available AWS roles",
+      "method": "GET",
+      "endpoint": "/roles",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "granted",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://granted.dev/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

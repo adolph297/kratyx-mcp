@@ -1,0 +1,33 @@
+{
+  "name": "Instana",
+  "slug": "instana",
+  "description": "Infrastructure and application performance monitoring",
+  "category": "devtools",
+  "color": "#000000",
+  "website": "https://instana.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.instana.com",
+  "apiKeyConfig": {
+    "headerName": "Authorization",
+    "prefix": "Bearer ",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_alerts",
+      "displayName": "List Alerts",
+      "description": "List monitoring alerts",
+      "method": "GET",
+      "endpoint": "/alerts",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "instana",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://instana.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

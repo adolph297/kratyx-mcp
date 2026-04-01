@@ -1,0 +1,28 @@
+{
+  "name": "Shadcn UI",
+  "slug": "shadcn-ui",
+  "description": "Beautifully designed component library for React applications",
+  "category": "devtools",
+  "color": "#000000",
+  "website": "https://ui.shadcn.com",
+  "authType": "none",
+  "baseUrl": "https://ui.shadcn.com/api",
+  "actions": [
+    {
+      "name": "list_components",
+      "displayName": "List Components",
+      "description": "List available components",
+      "method": "GET",
+      "endpoint": "/components",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "shadcn-ui",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://ui.shadcn.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Conviso MCP",
+  "slug": "conviso",
+  "description": "Application security and vulnerability management",
+  "category": "security",
+  "color": "#14B8A6",
+  "website": "https://convisoappsec.com",
+  "authType": "api_key",
+  "baseUrl": "https://api.convisoappsec.com/v1",
+  "apiKeyConfig": {
+    "headerName": "X-App-Key",
+    "location": "header"
+  },
+  "actions": [
+    {
+      "name": "list_vulns",
+      "displayName": "List Vulns",
+      "description": "List security vulnerabilities",
+      "method": "GET",
+      "endpoint": "/vulnerabilities",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "conviso",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "https://convisoappsec.com/docs",
+  "version": "1.0.0",
+  "status": "active"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Control your Mac",
+  "slug": "control-mac",
+  "description": "Automate macOS system actions and settings",
+  "category": "devtools",
+  "color": "#000000",
+  "website": "#",
+  "authType": "none",
+  "baseUrl": "#",
+  "actions": [
+    {
+      "name": "get_system_info",
+      "displayName": "Get System Info",
+      "description": "Retrieve mac system stats",
+      "method": "GET",
+      "endpoint": "/status",
+      "inputSchema": {}
+    }
+  ],
+  "icon": "control-mac",
+  "webhookSupport": false,
+  "rateLimits": {
+    "requestsPerMinute": 60
+  },
+  "documentation": "#/docs",
+  "version": "1.0.0",
+  "status": "active"
+}
