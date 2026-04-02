@@ -1,4 +1,1 @@
-<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <rect width="100" height="100" rx="20" fill="#3B82F6" fill-opacity="0.1"/>
-        <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="#3B82F6" text-anchor="middle">M</text>
-    </svg>
+<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>ChartMogul</title><path d="M10.621 19.89V8.75L2.867 19.89H0V4.11h2.758v11.112l7.754-11.113h2.867v11.14L21.16 4.11H24v15.782h-2.73V8.75l-7.755 11.14Z"/></svg>

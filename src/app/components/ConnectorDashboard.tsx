@@ -9,12 +9,14 @@ import {
   Plus, RefreshCw, ArrowRight, Layers, Globe, Shield,
   Terminal, BookOpen
 } from 'lucide-react';
+import ConnectorIcon from '@/app/components/ConnectorIcon';
 
 interface ConnectorAction {
   name: string;
   displayName: string;
   description: string;
   method: string;
+  inputSchema: any;
 }
 
 interface Connector {
@@ -60,45 +62,9 @@ const CATEGORY_CONFIG: Record<string, { label: string; icon: string; color: stri
   hr: { label: 'HR & Recruiting', icon: '👥', color: '#d946ef' },
 };
 
-function ConnectorIcon({ name, slug, color, size = 48 }: { name: string; slug: string; color: string; size?: number }) {
-  const [error, setError] = useState(false);
-  const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+// Component is now imported from @/app/components/ConnectorIcon
 
-  return (
-    <div 
-      className="connector-icon" 
-      style={{ 
-        background: error ? color || 'var(--bg-glass)' : 'transparent',
-        width: size,
-        height: size,
-        fontSize: size * 0.4,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: 'var(--radius-md)',
-        overflow: 'hidden',
-        border: error ? 'none' : '1px solid var(--border-subtle)',
-        padding: error ? 0 : size * 0.15,
-        backgroundColor: 'rgba(255, 255, 255, 0.03)',
-      }}
-    >
-      {!error ? (
-        <img 
-          src={`/icons/${slug}.svg`} 
-          alt={name}
-          width={size}
-          height={size}
-          style={{ objectFit: 'contain', width: '100%', height: '100%' }}
-          onError={() => setError(true)}
-        />
-      ) : (
-        <span style={{ color: 'white', fontWeight: 700 }}>{initials}</span>
-      )}
-    </div>
-  );
-}
-
-export default function ConnectorDashboard() {
+export default function ConnectorDashboard({ initialSlug }: { initialSlug?: string }) {
   const [connectors, setConnectors] = useState<Connector[]>([]);
   const [connections, setConnections] = useState<Connection[]>([]);
   const [loading, setLoading] = useState(true);
@@ -110,6 +76,10 @@ export default function ConnectorDashboard() {
   const [apiKeyInput, setApiKeyInput] = useState('');
   const [connectingSlug, setConnectingSlug] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<'connectors' | 'logs'>('connectors');
+  const [executingAction, setExecutingAction] = useState<string | null>(null);
+  const [actionPayload, setActionPayload] = useState<Record<string, string>>({});
+  const [executionResult, setExecutionResult] = useState<any>(null);
+  const [showExecutionResult, setShowExecutionResult] = useState(false);
 
   // Load connectors
   useEffect(() => {
@@ -119,6 +89,11 @@ export default function ConnectorDashboard() {
         const data = await res.json();
         if (data.success) {
           setConnectors(data.data);
+          
+          if (initialSlug) {
+            const initial = data.data.find((c: Connector) => c.slug === initialSlug);
+            if (initial) setSelectedConnector(initial);
+          }
         }
       } catch (err) {
         console.error('Failed to load connectors:', err);
@@ -127,7 +102,7 @@ export default function ConnectorDashboard() {
       }
     }
     fetchData();
-  }, []);
+  }, [initialSlug]);
 
   // Load connections
   useEffect(() => {
@@ -477,24 +452,107 @@ export default function ConnectorDashboard() {
                   <Terminal size={14} style={{ marginRight: 6, verticalAlign: 'middle' }} />
                   Available Actions
                 </h4>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                   {selectedConnector.actions.map(action => (
-                    <div key={action.name} style={{
-                      padding: '10px 14px',
-                      background: 'var(--bg-glass)',
+                    <div key={action.name} className="glass-card" style={{
+                      padding: '16px',
+                      background: 'rgba(255,255,255,0.02)',
                       border: '1px solid var(--border-subtle)',
-                      borderRadius: 'var(--radius-sm)',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
+                      borderRadius: 'var(--radius-md)',
                     }}>
-                      <div>
-                        <span style={{ fontSize: 13, fontWeight: 600 }}>{action.displayName}</span>
-                        <p style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>{action.description}</p>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
+                        <div>
+                          <span style={{ fontSize: 14, fontWeight: 700 }}>{action.displayName}</span>
+                          <p style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>{action.description}</p>
+                        </div>
+                        <span className={`badge ${action.method === 'GET' ? 'badge-success' : action.method === 'POST' ? 'badge-info' : 'badge-warning'}`} style={{ fontSize: 10 }}>
+                          {action.method}
+                        </span>
                       </div>
-                      <span className={`badge ${action.method === 'GET' ? 'badge-success' : action.method === 'POST' ? 'badge-info' : 'badge-warning'}`} style={{ fontSize: 10, fontWeight: 700 }}>
-                        {action.method}
-                      </span>
+
+                      {/* Dynamic Parameters Form */}
+                      {action.inputSchema?.properties && Object.keys(action.inputSchema.properties).length > 0 && (
+                        <div style={{ 
+                          padding: 12, 
+                          background: 'rgba(0,0,0,0.2)', 
+                          borderRadius: 'var(--radius-sm)', 
+                          marginBottom: 12,
+                          display: 'grid',
+                          gridTemplateColumns: '1fr',
+                          gap: 8
+                        }}>
+                          {Object.entries(action.inputSchema.properties).map(([key, prop]: [string, any]) => (
+                            <div key={key}>
+                              <label style={{ display: 'block', fontSize: 11, color: 'var(--text-muted)', marginBottom: 4 }}>
+                                {key} {prop.type ? `(${prop.type})` : ''}
+                              </label>
+                              <input 
+                                type="text"
+                                className="input"
+                                placeholder={`Enter ${key}...`}
+                                style={{ padding: '6px 12px', fontSize: 13 }}
+                                value={actionPayload[`${action.name}_${key}`] || ''}
+                                onChange={(e) => setActionPayload(prev => ({
+                                  ...prev,
+                                  [`${action.name}_${key}`]: e.target.value
+                                }))}
+                                disabled={!isConnected(selectedConnector.slug)}
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <button 
+                          className="btn-primary" 
+                          style={{ padding: '6px 16px', fontSize: 12 }}
+                          disabled={!isConnected(selectedConnector.slug) || executingAction === action.name}
+                          onClick={async () => {
+                            setExecutingAction(action.name);
+                            setExecutionResult(null);
+                            
+                            // Build payload
+                            const payload: Record<string, any> = {};
+                            const prefix = `${action.name}_`;
+                            Object.entries(actionPayload).forEach(([k, v]) => {
+                              if (k.startsWith(prefix)) {
+                                payload[k.substring(prefix.length)] = v;
+                              }
+                            });
+
+                            try {
+                              const res = await fetch('/api/execute', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                  userId: 'demo-user',
+                                  connectorSlug: selectedConnector.slug,
+                                  actionName: action.name,
+                                  payload
+                                })
+                              });
+                              const data = await res.json();
+                              setExecutionResult(data);
+                              setShowExecutionResult(true);
+                              
+                              // If switched to logs tab, it would be better
+                            } catch (err) {
+                              setExecutionResult({ success: false, error: 'Network error or execution failed' });
+                              setShowExecutionResult(true);
+                            } finally {
+                              setExecutingAction(null);
+                            }
+                          }}
+                        >
+                          {executingAction === action.name ? (
+                            <RefreshCw size={14} style={{ animation: 'spin 1s linear infinite' }} />
+                          ) : (
+                            <ArrowRight size={14} />
+                          )}
+                          Execute
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -527,6 +585,95 @@ export default function ConnectorDashboard() {
                     <Link2 size={16} /> Connect
                   </button>
                 )}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Execution Result Modal */}
+      <AnimatePresence>
+        {showExecutionResult && executionResult && (
+          <motion.div
+            className="modal-overlay"
+            style={{ zIndex: 1100 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowExecutionResult(false)}
+          >
+            <motion.div
+              className="modal-content"
+              style={{ maxWidth: 700, border: `1px solid ${executionResult.success ? 'var(--success)' : 'var(--danger)'}44` }}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={e => e.stopPropagation()}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <div style={{ 
+                    width: 32, height: 32, borderRadius: '50%', 
+                    background: executionResult.success ? 'var(--success)22' : 'var(--danger)22',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: executionResult.success ? 'var(--success)' : 'var(--danger)'
+                  }}>
+                    {executionResult.success ? <CheckCircle2 size={18} /> : <XCircle size={18} />}
+                  </div>
+                  <h3 style={{ fontSize: 18, fontWeight: 700 }}>
+                    Execution {executionResult.success ? 'Successful' : 'Failed'}
+                  </h3>
+                </div>
+                <button onClick={() => setShowExecutionResult(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}>
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }}>
+                <div style={{ padding: 12, background: 'rgba(0,0,0,0.2)', borderRadius: 'var(--radius-sm)' }}>
+                  <div style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 4 }}>Status Code</div>
+                  <div style={{ fontSize: 14, fontWeight: 600 }}>{executionResult.statusCode}</div>
+                </div>
+                <div style={{ padding: 12, background: 'rgba(0,0,0,0.2)', borderRadius: 'var(--radius-sm)' }}>
+                  <div style={{ fontSize: 11, color: 'var(--text-muted)', marginBottom: 4 }}>Duration</div>
+                  <div style={{ fontSize: 14, fontWeight: 600 }}>{executionResult.duration}ms</div>
+                </div>
+              </div>
+
+              <div style={{ marginBottom: 24 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                  <h4 style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-secondary)' }}>Response Data</h4>
+                  <button 
+                    className="btn-secondary" 
+                    style={{ padding: '4px 8px', fontSize: 11 }}
+                    onClick={() => navigator.clipboard.writeText(JSON.stringify(executionResult.data, null, 2))}
+                  >
+                    Copy JSON
+                  </button>
+                </div>
+                <pre style={{ 
+                  padding: 16, 
+                  background: '#050505', 
+                  borderRadius: 'var(--radius-md)', 
+                  fontSize: 12, 
+                  color: '#a5f3fc',
+                  overflowX: 'auto',
+                  maxHeight: 300,
+                  border: '1px solid var(--border-subtle)'
+                }}>
+                  {JSON.stringify(executionResult.data || { error: executionResult.error }, null, 2)}
+                </pre>
+              </div>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 12 }}>
+                <button className="btn-secondary" onClick={() => setShowExecutionResult(false)}>Close</button>
+                <button className="btn-primary" onClick={() => {
+                  setShowExecutionResult(false);
+                  setSelectedConnector(null);
+                  setActiveTab('logs');
+                }}>
+                  View in Logs
+                </button>
               </div>
             </motion.div>
           </motion.div>

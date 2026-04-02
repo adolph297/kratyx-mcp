@@ -180,21 +180,37 @@ function buildRequest(
     const { headerName, prefix, location } = connector.apiKeyConfig;
     if (location === 'header') {
       headers[headerName] = `${prefix || ''}${token}`;
+    } else if (location === 'query') {
+      // Query param will be added later in query params section
+    } else if (location === 'body') {
+      bodyPayload[headerName] = `${prefix || ''}${token}`;
     }
   }
 
-  // Build query params for GET requests
-  if (action.method === 'GET' && payload && Object.keys(bodyPayload).length > 0) {
+  // Build query params for GET requests OR for API key in query
+  if ((action.method === 'GET' || (connector.authType === 'api_key' && connector.apiKeyConfig?.location === 'query')) && 
+      (payload || (connector.authType === 'api_key' && connector.apiKeyConfig?.location === 'query'))) {
     const queryParams = new URLSearchParams();
-    for (const [key, value] of Object.entries(bodyPayload)) {
-      if (value !== undefined && value !== null) {
-        queryParams.set(key, String(value));
+    
+    // Add original payload to query params for GET
+    if (action.method === 'GET' && payload) {
+      for (const [key, value] of Object.entries(bodyPayload)) {
+        if (value !== undefined && value !== null) {
+          queryParams.set(key, String(value));
+        }
       }
     }
+    
+    // Add API key to query params
+    if (token && connector.authType === 'api_key' && connector.apiKeyConfig?.location === 'query') {
+      const { headerName, prefix } = connector.apiKeyConfig;
+      queryParams.set(headerName, `${prefix || ''}${token}`);
+    }
+
     const queryString = queryParams.toString();
     if (queryString) {
       const separator = url.includes('?') ? '&' : '?';
-      return { url: `${url}${separator}${queryString}`, headers };
+      return { url: `${url}${separator}${queryString}`, headers, body: action.method !== 'GET' && Object.keys(bodyPayload).length > 0 ? bodyPayload : undefined };
     }
   }
 
